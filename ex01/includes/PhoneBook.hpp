@@ -1,13 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/17 21:55:55 by dim               #+#    #+#             */
-/*   Updated: 2022/04/17 21:58:55 by dim              ###   ########.fr       */
+/*   Created: 2022/04/17 21:56:05 by dim               #+#    #+#             */
+/*   Updated: 2022/04/19 03:01:47 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+# include <iostream>
+# include "Contact.hpp"
+
+class PhoneBook {
+
+	public:
+		PhoneBook();
+		~PhoneBook();
+	private:
+		Contact contact[8];
+};
+
+#endif

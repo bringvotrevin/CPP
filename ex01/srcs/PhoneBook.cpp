@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/17 21:56:05 by dim               #+#    #+#             */
-/*   Updated: 2022/04/17 21:58:35 by dim              ###   ########.fr       */
+/*   Created: 2022/04/17 21:55:55 by dim               #+#    #+#             */
+/*   Updated: 2022/04/19 02:48:05 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "../includes/PhoneBook.hpp"
+#include <iostream>
 
-#endif
+PhoneBook::PhoneBook()
+{
+	std::cout << "PhoneBook Constructor called" << std::endl;
+}
+
+PhoneBook::~PhoneBook()
+{
+	std::cout << "PhoneBook Destructor called" << std::endl;
+}
