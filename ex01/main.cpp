@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:52:22 by dim               #+#    #+#             */
-/*   Updated: 2022/04/19 17:59:06 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/20 16:47:59 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 		else if (input == "EXIT")
 			break;
 		else
-			std::cout << "WRONG COMMAND. TRY AGAIN" << std::endl;
+			std::cout << RED "### ERROR : WRONG COMMAND. TRY AGAIN ###" NC << std::endl;
 	}
 	return (0);
 }

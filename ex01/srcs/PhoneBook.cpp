@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:55:55 by dim               #+#    #+#             */
-/*   Updated: 2022/04/20 02:54:00 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/20 16:47:48 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,18 +72,18 @@ void	PhoneBook::show_contact()
 	show_list();
 	std::cout << "PUT INDEX NUMBER FOR MORE INFORMATION : ";
 	std::cin >> input_index;
-	while (!std::cin || input_index > contact_len || input_index == 0)
+	while (!std::cin || input_index > (contact_len <= 8 ? contact_len : 8) \
+			|| input_index == 0)
 	{
 		std::cin.clear();
 		std::cin.ignore(1000, '\n');
-		std::cout << "#### ERROR: WRONG INPUT ####" << std::endl;
+		std::cout << RED "###  ERROR: WRONG INPUT  ###" NC << std::endl;
 		std::cout << "PUT INDEX NUMBER FOR MORE INFORMATION : ";
 		std::cin >> input_index;
 	}
 	i = (contact_len <= 8 ? (input_index - 1) \
-		: ((contact_len % 8) + input_index % 8 ) - 1);
+		: (((contact_len % 8 - 1) + input_index) % 8));
 	contacts[i].print_contact();
-
 }
 
 void	PhoneBook::search_contact()
@@ -91,16 +91,13 @@ void	PhoneBook::search_contact()
 	if (contact_len != 0)
 		show_contact();
 	else
-		std::cout << "#### ERROR : EMPTY CONTACT LIST ####" << std::endl;
+	{
+		std::cout << RED "### ERROR : EMPTY CONTACT LIST  ###" << std::endl;
+		std::cout << "###         ADD CONTACT FIRST   ###" NC << std::endl;
+	}
 }
 
 PhoneBook::PhoneBook()
 {
-	std::cout << "PhoneBook Constructor called" << std::endl;
 	this->contact_len = 0;
-}
-
-PhoneBook::~PhoneBook()
-{
-	std::cout << "PhoneBook Destructor called" << std::endl;
 }

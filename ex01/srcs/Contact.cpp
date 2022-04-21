@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:52:37 by dim               #+#    #+#             */
-/*   Updated: 2022/04/19 23:52:24 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/20 16:31:35 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	Contact::add_contact()
 	std::cin >> this->first_name;
 	std::cout << "Last Name      : ";
 	std::cin >> this->last_name;
-	std::cout << "Nickname      : ";
+	std::cout << "Nickname       : ";
 	std::cin >> this->nickname;
 	std::cout << "Phone Number   : ";
 	std::cin >> this->phone_number;
@@ -58,13 +58,4 @@ void	Contact::print_contact()
 	std::cout << "Nickname       : " << nickname << std::endl;
 	std::cout << "Phone Number   : " << phone_number << std::endl;
 	std::cout << "Darkest Secert : " << darkest_secret << std::endl;
-}
-
-Contact::Contact()
-{
-	std::cout << "Contact Constructor called" << std::endl;
-}
-Contact::~Contact()
-{
-	std::cout << "Contact Desstructor called" << std::endl;
 }

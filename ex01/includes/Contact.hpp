@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:56:01 by dim               #+#    #+#             */
-/*   Updated: 2022/04/19 23:52:01 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/20 16:30:28 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ class Contact {
 		void	add_contact();
 		void	print_contact();
 		void	print_contact_list();
-		Contact();
-		~Contact();
 
 	private:
 		std::string	first_name;
