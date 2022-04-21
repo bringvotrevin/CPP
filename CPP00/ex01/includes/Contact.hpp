@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:56:01 by dim               #+#    #+#             */
-/*   Updated: 2022/04/20 16:30:28 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/21 17:08:40 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <iomanip>
 
 
-class Contact {
+class Contact
+{
 	public:
 		void	add_contact();
 		void	print_contact();
