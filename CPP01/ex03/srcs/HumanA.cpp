@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
+/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 02:27:08 by dim               #+#    #+#             */
-/*   Updated: 2022/04/22 04:33:31 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/22 18:35:25 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,6 @@ void	HumanA::attack()
 }
 
 HumanA::HumanA(std::string name, Weapon &weapon)
-: name(name), weapon(weapon)
-{
-}
+: name(name), weapon(weapon) {}
 
-HumanA::HumanA()
-{
-	
-}
-
-HumanA::~HumanA()
-{
-	
-}
+HumanA::~HumanA() {}

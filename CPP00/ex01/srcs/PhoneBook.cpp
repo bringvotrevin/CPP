@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
+/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:55:55 by dim               #+#    #+#             */
-/*   Updated: 2022/04/20 16:47:48 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/22 17:36:19 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,18 @@ void	PhoneBook::show_contact()
 	show_list();
 	std::cout << "PUT INDEX NUMBER FOR MORE INFORMATION : ";
 	std::cin >> input_index;
-	while (!std::cin || input_index > (contact_len <= 8 ? contact_len : 8) \
-			|| input_index == 0)
+	if (std::cin.eof())
+		exit(0);
+	while (!std::cin ||	input_index > (contact_len <= 8 ? contact_len : 8) \
+			|| input_index == 0 || std::cin.get() != '\n')
 	{
 		std::cin.clear();
 		std::cin.ignore(1000, '\n');
 		std::cout << RED "###  ERROR: WRONG INPUT  ###" NC << std::endl;
 		std::cout << "PUT INDEX NUMBER FOR MORE INFORMATION : ";
 		std::cin >> input_index;
+		if (std::cin.eof())
+			exit(0);
 	}
 	i = (contact_len <= 8 ? (input_index - 1) \
 		: (((contact_len % 8 - 1) + input_index) % 8));

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
+/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:52:37 by dim               #+#    #+#             */
-/*   Updated: 2022/04/20 16:31:35 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/22 17:34:45 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,20 @@ void	Contact::add_contact()
 {
 	std::cout << "========PLEASE FILL OUT THIS FORM=========" << std::endl;
 	std::cout << "First Name     : ";
-	std::cin >> this->first_name;
+	std::getline(std::cin, this->first_name);
+	if (std::cin.eof()) exit(0);
 	std::cout << "Last Name      : ";
-	std::cin >> this->last_name;
+	std::getline(std::cin, this->last_name);
+	if (std::cin.eof()) exit(0);
 	std::cout << "Nickname       : ";
-	std::cin >> this->nickname;
+	std::getline(std::cin, this->nickname);
+	if (std::cin.eof()) exit(0);
 	std::cout << "Phone Number   : ";
-	std::cin >> this->phone_number;
+	std::getline(std::cin, this->phone_number);
+	if (std::cin.eof()) exit(0);
 	std::cout << "Darkest Secert : ";
-	std::cin >> this->darkest_secret;
+	std::getline(std::cin, this->darkest_secret);
+	if (std::cin.eof()) exit(0);
 	std::cout << "==================THANKS==================" << std::endl;
 }
 
@@ -43,11 +48,11 @@ std::string	Contact::cut_str(std::string str)
 
 void	Contact::print_contact_list()
 {
-	std::cout << std::setw(10) << this->cut_str(first_name);
+	std::cout << std::setw(10) << cut_str(first_name);
 	std::cout << "│";
-	std::cout << std::setw(10) << this->cut_str(last_name);
+	std::cout << std::setw(10) << cut_str(last_name);
 	std::cout << "│";
-	std::cout << std::setw(10) << this->cut_str(nickname);
+	std::cout << std::setw(10) << cut_str(nickname);
 	std::cout << "│";
 }
 

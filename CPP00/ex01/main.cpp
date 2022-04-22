@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
+/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:52:22 by dim               #+#    #+#             */
-/*   Updated: 2022/04/20 16:47:59 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/22 16:52:57 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ int	main(void)
 	{
 		std::cout << "WRITE A COMMAND (ADD / SEARCH / EXIT) : "; 
 		std::cin >> input;
+		if (std::cin.eof())
+			return (0);
+		std::cin.ignore(1000, '\n');
 		if (input == "ADD")
 			phonebook.add_contact();
 		else if (input == "SEARCH")

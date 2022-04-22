@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
+/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 02:25:44 by dim               #+#    #+#             */
-/*   Updated: 2022/04/22 04:27:29 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/22 18:16:54 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ class	HumanB
 {
 	public:
 		void	attack();
-		void	setWeapon(/* arg */);
+		void	setWeapon(Weapon &weapon);
 		HumanB(std::string name);
+		HumanB();
+		~HumanB();
 	private:
 		std::string	name;
 		Weapon		*weapon;
-		HumanB();
-		~HumanB();
 };
 
 #endif

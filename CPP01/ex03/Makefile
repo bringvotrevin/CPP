@@ -1,13 +1,13 @@
-NAME	 	=	a.out
+NAME	 	=	weapon
 CXX			=	c++
-CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 $(INFLAGS)
 INFLAGS		=	-I$(INCDIR)
 INCDIR		=	includes/
 SRCDIR		= 	srcs/
 
 SRCS	=	main.cpp \
 			$(addprefix $(SRCDIR), \
-			HuamnA.cpp \
+			HumanA.cpp \
 			HumanB.cpp \
 			Weapon.cpp)
 
