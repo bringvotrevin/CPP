@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
+/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:56:01 by dim               #+#    #+#             */
-/*   Updated: 2022/04/21 17:08:40 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/24 14:29:47 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-# define CONTACT_HPP
-# include <iostream>
+#define CONTACT_HPP
+#include <iostream>
 # include <iomanip>
-
 
 class Contact
 {

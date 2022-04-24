@@ -1,9 +1,9 @@
-NAME		=	Harl
+NAME		=	harlFilter
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Wall -std=c++98
 
 SRCS	=	main.cpp \
-			Harl.cpp
+			harlFilter.cpp
 			
 OBJS 	=	$(SRCS:.cpp=.o)
 

@@ -6,29 +6,29 @@
 /*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:52:37 by dim               #+#    #+#             */
-/*   Updated: 2022/04/23 17:03:16 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/24 15:18:09 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Contact.hpp"
+#include "Contact.hpp"
 
 void	Contact::add_contact()
 {
 	std::cout << "========PLEASE FILL OUT THIS FORM=========" << std::endl;
 	std::cout << "First Name     : ";
-	std::getline(std::cin, this->first_name);
+	std::getline(std::cin >> std::ws, this->first_name);
 	if (std::cin.eof()) exit(0);
 	std::cout << "Last Name      : ";
-	std::getline(std::cin, this->last_name);
+	std::getline(std::cin >> std::ws, this->last_name);
 	if (std::cin.eof()) exit(0);
 	std::cout << "Nickname       : ";
-	std::getline(std::cin, this->nickname);
+	std::getline(std::cin >> std::ws, this->nickname);
 	if (std::cin.eof()) exit(0);
 	std::cout << "Phone Number   : ";
-	std::getline(std::cin, this->phone_number);
+	std::getline(std::cin >> std::ws, this->phone_number);
 	if (std::cin.eof()) exit(0);
 	std::cout << "Darkest Secert : ";
-	std::getline(std::cin, this->darkest_secret);
+	std::getline(std::cin >> std::ws, this->darkest_secret);
 	if (std::cin.eof()) exit(0);
 	std::cout << "==================THANKS==================" << std::endl;
 }

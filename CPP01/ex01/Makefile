@@ -1,6 +1,6 @@
 NAME	 	=	zombies
 CXX			=	c++
-CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 $(INFLAGS)
 INFLAGS		=	-I$(INCDIR)
 INCDIR		=	includes/
 SRCDIR		= 	srcs/
