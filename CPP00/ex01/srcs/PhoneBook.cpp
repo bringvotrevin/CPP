@@ -6,13 +6,14 @@
 /*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:55:55 by dim               #+#    #+#             */
-/*   Updated: 2022/04/24 14:26:54 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/25 12:24:41 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 void	PhoneBook::add_contact()
 {
@@ -78,7 +79,7 @@ void	PhoneBook::show_contact()
 			|| input_index == 0 || std::cin.get() != '\n')
 	{
 		std::cin.clear();
-		std::cin.ignore(1000, '\n');
+		std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 		std::cout << RED "###  ERROR: WRONG INPUT  ###" NC << std::endl;
 		std::cout << "PUT INDEX NUMBER FOR MORE INFORMATION : ";
 		std::cin >> input_index;

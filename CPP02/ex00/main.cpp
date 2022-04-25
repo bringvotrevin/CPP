@@ -5,29 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 15:40:36 by dim               #+#    #+#             */
-/*   Updated: 2022/04/25 11:10:30 by dim              ###   ########.fr       */
+/*   Created: 2022/04/25 11:38:24 by dim               #+#    #+#             */
+/*   Updated: 2022/04/25 20:39:16 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-std::string	lowerString(std::string level)
+int		main(void)
 {
-	for (size_t j = 0, end = level.length(); j < end; j++)
-		level[j] = std::tolower(level[j]);
-	return (level);
-}
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
 
-int		main(int argc, char *argv[])
-{
-	if (argc != 2)
-	{
-		std::cout << "ERROR : execute with only one argument like \"DEBUG\", \"INFO\", \"WARNING\", \"ERROR\" or anything you want" << std::endl;
-		return (0);
-	}
-	std::string level = lowerString(argv[1]);
-	Harl harl(level);
-	harl.complain();
+	c = b;
+
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+
 	return (0);
 }

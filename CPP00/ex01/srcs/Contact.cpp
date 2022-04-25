@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:52:37 by dim               #+#    #+#             */
-/*   Updated: 2022/04/24 15:18:09 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/25 15:40:07 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	Contact::add_contact()
 	std::cout << "Phone Number   : ";
 	std::getline(std::cin >> std::ws, this->phone_number);
 	if (std::cin.eof()) exit(0);
-	std::cout << "Darkest Secert : ";
+	std::cout << "Darkest Secret : ";
 	std::getline(std::cin >> std::ws, this->darkest_secret);
 	if (std::cin.eof()) exit(0);
 	std::cout << "==================THANKS==================" << std::endl;
