@@ -5,31 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 11:38:24 by dim               #+#    #+#             */
-/*   Updated: 2022/04/25 23:54:15 by dim              ###   ########.fr       */
+/*   Created: 2022/04/26 01:18:42 by dim               #+#    #+#             */
+/*   Updated: 2022/04/26 05:32:59 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ScavTrap.hpp"
 
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
+int	main(void)
 {
-	out << fixed.toFloat();
-	return (out);
-}
+	ScavTrap	a("a");
+	ScavTrap	b("b");
 
-int		main(void)
-{
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << std::endl;
 	
-	return 0;
+	a.attack("b");
+	b.takeDamage(a.getDamagePoint());
+	
+	std::cout << std::endl;
+	
+	b.attack("a");
+	a.takeDamage(b.getDamagePoint());
+	
+	std::cout << std::endl;
+	
+	a.attack("b");
+	b.takeDamage(a.getDamagePoint());
+	
+	std::cout << std::endl;
+	
+	b.attack("a");
+	a.takeDamage(b.getDamagePoint());
+	
+	std::cout << std::endl;
+	
+	b.guardGate();
+	
+	std::cout << std::endl;
+	return (0);
 }

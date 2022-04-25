@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 02:27:49 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 00:24:17 by dim              ###   ########.fr       */
+/*   Created: 2022/04/26 05:33:34 by dim               #+#    #+#             */
+/*   Updated: 2022/04/26 05:38:37 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/HumanB.hpp"
-#include "../includes/Weapon.hpp"
+#ifndef _FRAGTRAP_H__
+#define _FRAGTRAP_H__
+#include "ClapTrap.hpp"
 
-void	HumanB::attack()
+class FragTrap : public ClapTrap
 {
-	if (weapon == NULL)
-		return ;
-	std::cout << name << " attacks with their " << weapon->getType() << std::endl;
-}
+private:
+	std::string _name;
 
-void	HumanB::setWeapon(Weapon &weapon)
-{
-	this->weapon = &weapon;
-}
+public:
+	FragTrap();
+	FragTrap(std::string name);
+	FragTrap(const FragTrap& other);
+	FragTrap& operator=(const FragTrap& other);
+	~FragTrap();
+};
 
-HumanB::HumanB(std::string name)
-: name(name), weapon(NULL) {}
-
-HumanB::HumanB() {}
-
-HumanB::~HumanB() {}
+#endif

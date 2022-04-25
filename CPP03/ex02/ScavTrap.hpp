@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 02:27:49 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 00:24:17 by dim              ###   ########.fr       */
+/*   Created: 2022/04/26 02:50:04 by dim               #+#    #+#             */
+/*   Updated: 2022/04/26 05:28:23 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/HumanB.hpp"
-#include "../includes/Weapon.hpp"
+#ifndef SCAVTRAP_H
+#define SCAVTRAP_H
 
-void	HumanB::attack()
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	if (weapon == NULL)
-		return ;
-	std::cout << name << " attacks with their " << weapon->getType() << std::endl;
-}
+public:
+	ScavTrap();
+	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap& other);
+	ScavTrap& operator=(const ScavTrap& rhs);
+	~ScavTrap();
 
-void	HumanB::setWeapon(Weapon &weapon)
-{
-	this->weapon = &weapon;
-}
+	void	attack(const std::string &target);
+	void	guardGate();
+};
 
-HumanB::HumanB(std::string name)
-: name(name), weapon(NULL) {}
-
-HumanB::HumanB() {}
-
-HumanB::~HumanB() {}
+#endif
