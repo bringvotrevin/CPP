@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 02:50:01 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 05:10:35 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/26 16:52:45 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "SlavTrap Destructor called" << std::endl;
+	std::cout << "ScavTrap Destructor called" << std::endl;
 }
 
 void	ScavTrap::attack(const std::string &target)

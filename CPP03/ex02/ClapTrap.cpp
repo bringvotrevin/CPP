@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 01:18:36 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 05:17:52 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/27 03:12:13 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		return ;
 	}
 	std::cout << "ClapTrap < " << _name << " > has taken [ " 
-			<< _attackDamage << " ] points of damage!" <<std::endl;
-	if (_hitPoint - amount <= 0)
+			<< amount << " ] points of damage!" <<std::endl;
+	if (static_cast<int>(_hitPoint - amount) <= 0)
 	{
 		_hitPoint = 0;
 		std::cout << "              * [ 0 ] energy points left. he's dead.. *" << std::endl;

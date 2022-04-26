@@ -1,0 +1,73 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/26 17:35:10 by dim               #+#    #+#             */
+/*   Updated: 2022/04/27 04:38:17 by dim              ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/Animal.hpp"
+#include "../includes/Dog.hpp"
+#include "../includes/Cat.hpp"
+#include "../includes/WrongCat.hpp"
+#include "../includes/WrongAnimal.hpp"
+#include "../includes/Brain.hpp"
+
+void	leee()
+{
+	std::cout << "\n============[ Subject Test ]============" << std::endl;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+
+	delete j;//should not create a leak
+	delete i;
+	
+	std::cout << "\n============[ Change Test ]============" << std::endl;
+	Dog dd;
+	Dog dodo;
+
+	dd.changeIdea("dd");
+	dd.sayIt();
+	dd = dodo;
+	dd.sayIt();
+	dodo.changeIdea("what?");
+	dodo.sayIt();
+	dd.sayIt();
+
+	std::cout << "\n============[ Array Test ]============" << std::endl;
+	const Animal *array[10];	
+	std::cout << "\n-----------( 5 Dogs Constructed )---------" << std::endl;
+	int index = 0;
+	while (index < 5) {
+	  array[index++] = new Dog();
+	}
+	std::cout << "------------------------------------------" << std::endl;	
+	std::cout << "\n-----------( 5 Cats Constructed )---------" << std::endl;
+	while (index < 10) {
+	  array[index++] = new Cat();
+	}
+	std::cout << "------------------------------------------" << std::endl;	
+	std::cout << std::endl;
+	index = 0;
+	while (index < 10) {
+	  array[index++]->makeSound();
+	}
+	std::cout << "\n";
+	index = 0;
+	while (index < 10) {
+		array[index]->sayIt();
+		delete array[index++];
+		std::cout << "\n";
+	}
+}
+
+int		main()
+{
+	leee();
+	system("leaks animal");
+	return 0;
+}

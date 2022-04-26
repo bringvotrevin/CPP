@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 05:33:34 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 16:55:31 by dim              ###   ########.fr       */
+/*   Created: 2022/04/26 18:07:54 by dim               #+#    #+#             */
+/*   Updated: 2022/04/26 20:54:29 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_H
-#define FRAGTRAP_H
-#include "ClapTrap.hpp"
+#ifndef _CAT_H__
+#define _CAT_H__
 
-class FragTrap : public ClapTrap
+#include "Animal.hpp"
+
+class Cat: public Animal
 {
-public:
-	FragTrap();
-	FragTrap(std::string name);
-	FragTrap(const FragTrap& other);
-	FragTrap& operator=(const FragTrap& other);
-	~FragTrap();
+private: 
 
-	void	highFivesGuys();
+public:
+	Cat();
+	Cat(const Cat& other);
+	Cat& operator=(const Cat& rhs);
+	~Cat();
+	void	makeSound() const;
 };
 
 #endif

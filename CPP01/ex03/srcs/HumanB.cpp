@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 02:27:49 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 00:24:17 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/26 18:52:29 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/HumanB.hpp"
-#include "../includes/Weapon.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
 void	HumanB::attack()
 {
 	if (weapon == NULL)
+	{
+		std::cout << name << "has no weapon.. cannot attack"<< std::endl;
 		return ;
+	}
 	std::cout << name << " attacks with their " << weapon->getType() << std::endl;
 }
 
