@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 02:50:01 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 16:52:45 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/27 16:08:23 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other) // 부모생성자 인자로 자식 넣어주는건 됨, 반대는 안되는듯
 {
-	std::cout << "SlavTrap Copy constructor called" << std::endl;
+	std::cout << "ScavTrap Copy constructor called" << std::endl;
 	*this = other;
 }
 

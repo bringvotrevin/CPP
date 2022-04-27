@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 15:40:36 by dim               #+#    #+#             */
-/*   Updated: 2022/04/24 20:07:06 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/27 16:31:47 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ int		main()
 	Harl harl;
 
 	harl.complain("debug");
+	// harl.complain("Debug");
 	harl.complain("info");
 	harl.complain("warning");
 	harl.complain("error");
+	// harl.complain("sss");
 	return (0);
 }

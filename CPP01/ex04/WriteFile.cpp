@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   WriteFile.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 18:52:33 by dim               #+#    #+#             */
-/*   Updated: 2022/04/23 22:31:47 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/27 16:04:22 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WriteFile.hpp"
 
 void	replace_and_write(int *flag, size_t idx, std::ofstream &W_file, std::string &copy, \
-							const std::string &s1, std::string &s2)
+							const std::string &s1, const std::string &s2)
 {
 	if (*flag == 0)
 		W_file << std::endl;
@@ -32,7 +32,7 @@ void	write_file(char *argv[], std::ifstream &R_file, std::ofstream &W_file)
 	size_t		idx;
 	std::string copy;
 	const std::string s1(argv[2]);
-	std::string s2(argv[3]);
+	const std::string s2(argv[3]);
 	while (!R_file.eof())
 	{
 		std::getline(R_file, copy);

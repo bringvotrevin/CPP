@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 02:06:10 by dim               #+#    #+#             */
-/*   Updated: 2022/04/24 21:21:06 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/27 16:27:47 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	Harl::complain(std::string level)
 {
+	for (size_t j = 0, end = level.length(); j < end; j++)
+	level[j] = std::tolower(level[j]);
+	
 	void	(Harl::*makecomplain[])(void) = {
 		&Harl::debug,
 		&Harl::info,
@@ -33,8 +36,10 @@ void	Harl::complain(std::string level)
 		{
 			void (Harl::*explode)(void) = makecomplain[i];
 			(this->*explode)();
+			return ;
 		}
 	}
+	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
 
 void	Harl::debug(void)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 01:18:39 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 05:20:58 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/27 16:10:42 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap& other);
-	ClapTrap& operator=(const ClapTrap& rhs);
+	ClapTrap& operator=(const ClapTrap& other);
 	~ClapTrap();
 
 	void	attack(const std::string &target);

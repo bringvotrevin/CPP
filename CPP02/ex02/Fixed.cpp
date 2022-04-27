@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:22:30 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 00:11:53 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/27 15:19:00 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ Fixed &Fixed::operator=(const Fixed &another)
 	return (*this);
 }
 
+// 사칙연산자
+
 const Fixed Fixed::operator+(Fixed const &another) const {
 	return ((this->value / 256.0f) + (another.value / 256.0f));
 }
@@ -87,6 +89,9 @@ const Fixed Fixed::operator/(Fixed const &another) const
 {
 	return ((this->value / 256.0f) / (another.value / 256.0f));
 }
+
+// 비교연산자
+
 bool	Fixed::operator>(Fixed const &another) const 
 {
 	return (value > another.value);
@@ -111,6 +116,9 @@ bool	Fixed::operator!=(Fixed const &another) const
 {
 	return (value != another.value);
 }
+
+// 증감연산자
+
 Fixed &Fixed::operator++() 
 {
 	++value;
@@ -133,6 +141,9 @@ const Fixed Fixed::operator--(int)
 	value--;
 	return (tmp);
 }
+
+// 최대최소
+
 Fixed &Fixed::min(Fixed& a1, Fixed& a2)
 {
 	return (a1 < a2 ? a1 : a2);
