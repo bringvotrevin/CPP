@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:22:30 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 15:19:00 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/27 21:37:27 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,20 @@ Fixed &Fixed::operator=(const Fixed &another)
 // 사칙연산자
 
 const Fixed Fixed::operator+(Fixed const &another) const {
-	return ((this->value / 256.0f) + (another.value / 256.0f));
+	return (Fixed((this->value / 256.0f) + (another.value / 256.0f)));
 }
 
 const Fixed Fixed::operator-(Fixed const &another) const 
 {
-	return ((this->value / 256.0f) - (another.value / 256.0f));
+	return (Fixed((this->value / 256.0f) - (another.value / 256.0f)));
 }
 const Fixed Fixed::operator*(Fixed const &another) const
 {
-	return ((this->value / 256.0f) * (another.value / 256.0f));
+	return (Fixed((this->value / 256.0f) * (another.value / 256.0f)));
 }
 const Fixed Fixed::operator/(Fixed const &another) const
 {
-	return ((this->value / 256.0f) / (another.value / 256.0f));
+	return (Fixed((this->value / 256.0f) / (another.value / 256.0f)));
 }
 
 // 비교연산자

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:22:46 by dim               #+#    #+#             */
-/*   Updated: 2022/04/25 21:55:32 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/27 16:43:09 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
 		Fixed(const Fixed &fixed);
 		~Fixed();
 
-		Fixed &operator=(const Fixed &another);
+		Fixed &operator=(const Fixed &other);
 		
 		int		getRawBits() const;
 		void	setRawBits(int const raw);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:22:30 by dim               #+#    #+#             */
-/*   Updated: 2022/04/25 21:38:17 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/27 21:27:35 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ float	Fixed::toFloat() const
 
 int		Fixed::toInt() const
 {
-	int		fixed_to_int = value >> 8;
+	int		fixed_to_int = value >> fractional_bit;
 	return (fixed_to_int);
 }
 
