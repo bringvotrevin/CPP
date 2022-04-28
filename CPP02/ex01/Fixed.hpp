@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:22:46 by dim               #+#    #+#             */
-/*   Updated: 2022/04/25 23:32:45 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/28 14:59:03 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 #define	FIXED_HPP
 
 #include <iostream>
-#include <cmath>
 
 class Fixed
 {
 	public :
 		Fixed();
-		Fixed(const Fixed &fixed);
 		Fixed(const int num);
 		Fixed(const float floating_num);
+		Fixed(const Fixed &fixed);
 		~Fixed();
 		Fixed &operator=(const Fixed &another);
 	
@@ -35,5 +34,7 @@ class Fixed
 		int		value;
 		static const int	fractional_bit = 8;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif

@@ -6,11 +6,12 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:22:30 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 21:27:35 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/28 14:58:59 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed()
 {
@@ -69,4 +70,10 @@ void	Fixed::setRawBits(int const value)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->value = value;
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
+{
+	out << fixed.toFloat();
+	return (out);
 }

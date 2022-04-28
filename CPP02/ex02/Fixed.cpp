@@ -6,11 +6,12 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:22:30 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 21:37:27 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/28 14:58:52 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed()
 {
@@ -159,4 +160,10 @@ Fixed &Fixed::max(Fixed& a1, Fixed& a2)
 const Fixed &Fixed::max(const Fixed& a1, const Fixed& a2)
 {
 	return (a1 > a2 ? a1 : a2);
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
+{
+	out << fixed.toFloat();
+	return (out);
 }
