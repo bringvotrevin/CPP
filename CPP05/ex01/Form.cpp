@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 02:37:10 by dim               #+#    #+#             */
-/*   Updated: 2022/04/28 21:43:30 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 03:05:05 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void Form::setIsSigned(bool isSigned) {
 	this->isSigned = isSigned;
 }
 
-void Form::beSigned(const Bureaucrat &bureaucrat) {
+void Form::makeSigned(const Bureaucrat &bureaucrat) {
 	if (isSigned == true)
 		
 	if (signGrade < bureaucrat.getGrade())

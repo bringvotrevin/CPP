@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 00:01:39 by dim               #+#    #+#             */
-/*   Updated: 2022/04/28 04:26:48 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 03:20:16 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,13 @@ void Bureaucrat::signForm(Form &form) {
 	catch (const std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
+}
+
+void	Bureaucrat::executeForm(Form const &form)
+{
+
+	std::cout << "< " << name << " >" << "executed " \
+		<< "< "<< form.getFormName() << " >" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat& bureaucrat) {

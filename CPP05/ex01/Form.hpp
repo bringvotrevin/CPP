@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 02:06:30 by dim               #+#    #+#             */
-/*   Updated: 2022/04/28 04:27:33 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 03:04:56 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ public:
 	int getExecuteGrade() const;
 
 	void	setIsSigned(bool isSigned);
-	void	beSigned(const Bureaucrat &bureaucrat);
+	void	makeSigned(const Bureaucrat &bureaucrat);
 };
 
 std::ostream&	operator<<(std::ostream &os, const Form& form);

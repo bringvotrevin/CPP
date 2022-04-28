@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 02:37:10 by dim               #+#    #+#             */
-/*   Updated: 2022/04/28 18:16:21 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 03:16:36 by dim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void Form::setIsSigned(bool isSigned) {
 	this->isSigned = isSigned;
 }
 
-void Form::beSigned(const Bureaucrat &bureaucrat) {
+void Form::makeSigned(const Bureaucrat &bureaucrat) {
 	if (signGrade < bureaucrat.getGrade())
 	{
 		std::cout << "< " << bureaucrat.getName() << " >" << " couldn't sign " \
@@ -89,6 +89,19 @@ void Form::beSigned(const Bureaucrat &bureaucrat) {
 		throw GradeTooLowException();
 	}
 	isSigned = true;
+}
+
+void	Form::execute(Bureaucrat const &executor) const
+{
+	if (isSigned == false)
+	{
+		if (signGrade < executor.getGrade())
+			throw GradeTooLowException();
+		else
+		{
+			executor.executeForm(*this);
+		}
+	}
 }
 
 std::ostream& operator<<(std::ostream &os, const Form& form) {
