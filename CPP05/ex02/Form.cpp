@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 02:37:10 by dim               #+#    #+#             */
-/*   Updated: 2022/04/28 21:43:30 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/28 18:16:21 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ Form::Form(std::string formname, \
 	if (signGrade < 1 || signGrade > 150)
 	{
 		signGrade < 1 ? \
-			hrow GradeTooHighException() : throw GradeTooLowException();
+			throw GradeTooHighException() : throw GradeTooLowException();
 	}
 	if (executeGrade < 1 || executeGrade > 150)
 	{
 		executeGrade < 1 ? \
-		t	hrow GradeTooHighException() : throw GradeTooLowException();
+			throw GradeTooHighException() : throw GradeTooLowException();
 	}
 	isSigned = false;
 }
@@ -82,8 +82,6 @@ void Form::setIsSigned(bool isSigned) {
 }
 
 void Form::beSigned(const Bureaucrat &bureaucrat) {
-	if (isSigned == true)
-		
 	if (signGrade < bureaucrat.getGrade())
 	{
 		std::cout << "< " << bureaucrat.getName() << " >" << " couldn't sign " \
