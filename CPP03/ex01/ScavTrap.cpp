@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 02:50:01 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 16:08:01 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/28 20:26:05 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,23 @@ void	ScavTrap::attack(const std::string &target)
 {
 	if (_hitPoint != 0 && _energyPoint != 0)
 	{
+		_energyPoint--;
 		std::cout << "[ATTACK] " << "ScavTrap < " << getName() << " > attacks < " << target
-		<< " >, causing [ " << _attackDamage << " ] points of damage!" <<std::endl;
+		<< " >, causing [ " << _attackDamage << " ] points of damage!" << '\n' \
+		<< "         1 energy point used : " << "[ " << _energyPoint << " ] energy point left" << std::endl;
+	}
+	else
+	{
+		std::cout << "[ATTACK] " << " Fail : ScavTrap has no energy point or no hit point " << std::endl;
 	}
 }
 
 void	ScavTrap::guardGate()
 {
-	std::cout << " ScavTrap is now in Gate keeper mode." << std::endl;
+	if (_hitPoint != 0)
+		std::cout << " ScavTrap is now in Gate keeper mode." << std::endl;
+	else
+	{
+		std::cout << " ScavTrap is dead. cannot get in Gate keeper mode." << std::endl;
+	}
 }

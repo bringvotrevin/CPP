@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 05:33:15 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 16:57:11 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/28 20:54:23 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,10 @@ FragTrap::~FragTrap()
 
 void	FragTrap::highFivesGuys()
 {
-	std::cout << " FragTrap request a positive high five." << std::endl;
+	if (_hitPoint != 0)
+		std::cout << " FragTrap request a positive high five." << std::endl;
+	else
+	{
+		std::cout << " FragTrap is dead. cannot request a positive high five." << std::endl;
+	}
 }

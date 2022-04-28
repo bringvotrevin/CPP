@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dim <dim@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 01:18:42 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 05:32:59 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/28 20:27:01 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(void)
 	
 	b.attack("a");
 	a.takeDamage(b.getDamagePoint());
+	a.beRepaired(25);
 	
 	std::cout << std::endl;
 	
