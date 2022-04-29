@@ -6,28 +6,32 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 18:09:21 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 03:11:44 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/29 23:09:00 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _SHRUBBERYCREATIONFORM_H__
-# define _SHRUBBERYCREATIONFORM_H__
+#ifndef _SHRUBBERYCREATIONFORM_HPP__
+# define _SHRUBBERYCREATIONFORM_HPP__
 #include <iostream>
-#include <exception>
 #include <string>
 #include "Form.hpp"
 
-class ShrubberyCreationForm
+class ShrubberyCreationForm : public Form
 {
-private: 
+private:
+	std::string target;
 
 public:
 	ShrubberyCreationForm();
-	ShrubberyCreationForm(std::string &target);
+	ShrubberyCreationForm(std::string target);
 	ShrubberyCreationForm(const ShrubberyCreationForm& other);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
 	~ShrubberyCreationForm();
 
+	std::string const	&getTarget() const;
+	void	execute(Bureaucrat const &executor) const;
 };
+
+std::ostream&	operator<<(std::ostream &os, const ShrubberyCreationForm& form);
 
 #endif

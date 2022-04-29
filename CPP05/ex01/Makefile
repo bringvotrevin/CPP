@@ -1,10 +1,14 @@
 NAME		=	bureaucrat
 CXX			=	c++
-CXXFLAGS	=	-Wall -Wextra -Wall -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Wall -std=c++98 $(INFLAGS)
+INFLAGS		=	-I$(INCDIR)
+INCDIR		=	./includes/
+SRCDIR		=	srcs/
 
 SRCS	=	main.cpp \
+			$(addprefix $(SRCDIR), \
 			Bureaucrat.cpp \
-			Form.cpp
+			Form.cpp)
 			
 OBJS 	=	$(SRCS:.cpp=.o)
 

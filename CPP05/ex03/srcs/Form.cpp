@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 02:37:10 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 03:16:36 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/30 00:39:49 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ Form::Form(std::string formname, \
 {
 	if (signGrade < 1 || signGrade > 150)
 	{
+		std::cout << "< " << formname << " >" << "FORM'S SIGN ";
 		signGrade < 1 ? \
 			throw GradeTooHighException() : throw GradeTooLowException();
 	}
 	if (executeGrade < 1 || executeGrade > 150)
 	{
+		std::cout << "< " << formname << " >"  << "FORM'S EXECUTE ";
 		executeGrade < 1 ? \
 			throw GradeTooHighException() : throw GradeTooLowException();
 	}
@@ -42,7 +44,7 @@ Form::Form(const Form& other)
 }
 
 Form& Form::operator=(const Form& other) {
-	isSigned = other.isSigned;
+	isSigned = other.getIsSigned();
 	return (*this);
 }
 
@@ -51,13 +53,23 @@ Form::~Form() {}
 
 Form::GradeTooHighException::GradeTooHighException() {}
 Form::GradeTooLowException::GradeTooLowException() {}
+Form::NotSignedException::NotSignedException() {}
+Form::NoExecAuthorityException::NoExecAuthorityException() {}
 
 const char *Form::GradeTooHighException::what() const throw() {
-	return ("TOO HIGH GRADE");
+	return ("GRADE IS TOO HIGH");
 }
 
 const char *Form::GradeTooLowException::what() const throw() {
-	return ("TOO LOW GRADE");
+	return ("GRADE IS TOO LOW");
+}
+
+const char *Form::NotSignedException::what() const throw() {
+	return ("THE FORM IS NOT SIGNED YET. MAKE THE FORM SIGNED FIRST");
+}
+
+const char *Form::NoExecAuthorityException::what() const throw() {
+	return ("TOO LOW GRADE TO EXECUTE THE FORM");
 }
 
 std::string const& Form::getFormName() const {
@@ -76,31 +88,32 @@ int Form::getExecuteGrade() const {
 	return (executeGrade);
 }
 
-
-void Form::setIsSigned(bool isSigned) {
-	this->isSigned = isSigned;
-}
-
-void Form::makeSigned(const Bureaucrat &bureaucrat) {
-	if (signGrade < bureaucrat.getGrade())
-	{
-		std::cout << "< " << bureaucrat.getName() << " >" << " couldn't sign " \
-					<< this->getFormName() << " because ";
-		throw GradeTooLowException();
+void Form::beSigned(const Bureaucrat &bureaucrat) {
+	if (isSigned == false)
+	{	
+		if (signGrade < bureaucrat.getGrade())
+		{
+			std::cout << "< " << bureaucrat.getName() << " >" << " couldn't sign " \
+						<< "< " << this->getFormName() << " >" << " because ";
+			throw GradeTooLowException();
+		}
+		isSigned = true;
 	}
-	isSigned = true;
+	else
+		std::cout << "< " << getFormName() << " >" << "is signed already" << std::endl;
 }
 
 void	Form::execute(Bureaucrat const &executor) const
 {
 	if (isSigned == false)
 	{
-		if (signGrade < executor.getGrade())
-			throw GradeTooLowException();
-		else
-		{
-			executor.executeForm(*this);
-		}
+		throw NotSignedException();
+	}
+	if (executeGrade < executor.getGrade())
+	{
+		std::cout << "< " << executor.getName() << " >" << " couldn't execute " \
+					<< this->getFormName() << " because ";
+		throw NoExecAuthorityException();
 	}
 }
 

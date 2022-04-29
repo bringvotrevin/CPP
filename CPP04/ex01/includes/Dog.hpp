@@ -6,12 +6,12 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 18:07:59 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 04:12:17 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 16:49:48 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DOG_H__
-#define _DOG_H__
+#ifndef _DOG_HPP__
+#define _DOG_HPP__
 
 #include "Animal.hpp"
 #include "Brain.hpp"

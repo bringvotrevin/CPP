@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 00:01:39 by dim               #+#    #+#             */
-/*   Updated: 2022/04/28 04:26:48 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/30 00:32:29 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ Bureaucrat::Bureaucrat(): name("default"), grade(150) {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade): name(name) {
 	if (grade < 1 || grade > 150)
+	{
+		std::cout << "< " << name << " >" << "BUREAUCRAT'S GRADE ";
 		grade < 1 ? throw GradeTooHighException(grade) : throw GradeTooLowException(grade);
+	}
 	else
 		this->grade = grade;
 }
@@ -68,11 +71,30 @@ void Bureaucrat::decreaseGrade() {
 
 void Bureaucrat::signForm(Form &form) {
 	try {
-		form.beSigned(*this);
-		std::cout << "< " << name << " > signed " << "< " \
-		<< form.getFormName() << " >" << std::endl;
+		if (form.getIsSigned() == true)
+			std::cout << "< " << form.getFormName() << " >" << " is signed already" << std::endl;
+		else
+		{
+			form.beSigned(*this);
+			std::cout << "< " << name << " > signed " << "< " << form.getFormName() << " >" << std::endl;
+		}
+		
 	}
 	catch (const std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << "< " << name << " >" << " executed " \
+			<< "< "<< form.getFormName() << " >" << std::endl;
+	}
+	catch (const std::exception &e)
+	{
 		std::cout << e.what() << std::endl;
 	}
 }

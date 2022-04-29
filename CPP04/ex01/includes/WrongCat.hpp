@@ -6,12 +6,12 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 21:58:26 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 22:06:44 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 16:50:22 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _WRONGCAT_H__
-#define _WRONGCAT_H__
+#ifndef _WRONGCAT_HPP__
+#define _WRONGCAT_HPP__
 
 #include "WrongAnimal.hpp"
 

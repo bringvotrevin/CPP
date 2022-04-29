@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 17:35:55 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 16:48:46 by dim              ###   ########seoul.kr  */
+/*   Created: 2022/04/30 00:58:45 by dim               #+#    #+#             */
+/*   Updated: 2022/04/30 04:36:23 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ANIMAL_HPP__
-# define _ANIMAL_HPP__
+#ifndef INTERN_HPP
+#define INTERN_HPP
+
+#include "Form.hpp"
 #include <iostream>
-#include <string>
 
-class Animal {
-protected: 
-	std::string	type;
+class Intern;
+
+class Intern
+{
+private:
+	class NotMatchingFormName : public std::exception
+	{
+	public :
+		NotMatchingFormName();
+		virtual const char *what() const throw();
+	};
 public:
-	Animal();
-	Animal(const std::string type);
-	Animal(const Animal& other);
-	Animal& operator=(const Animal& other);
-	virtual ~Animal();
+	Intern();
+	Intern(const Intern& other);
+	Intern& operator=(const Intern& rhs);
+	~Intern();
 
-	std::string	const&getType() const;
-	virtual void	makeSound() const;
+	Form	*makeForm(std::string const &formName, std::string const &target);
 };
 
 #endif

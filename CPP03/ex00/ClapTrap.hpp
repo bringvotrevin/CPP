@@ -6,12 +6,12 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 01:18:39 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 16:12:26 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 16:45:53 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CLAPTRAP_H__
-#define _CLAPTRAP_H__
+#ifndef _CLAPTRAP_HPP__
+#define _CLAPTRAP_HPP__
 #include <iostream>
 #include <string>
 

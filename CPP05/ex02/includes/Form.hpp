@@ -6,12 +6,12 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 02:06:30 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 03:04:56 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/29 23:59:29 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FORM_H__
-# define _FORM_H__
+#ifndef _FORM_HPP__
+# define _FORM_HPP__
 #include <iostream>
 #include <exception>
 #include <string>
@@ -39,6 +39,18 @@ private:
 		GradeTooLowException();
 		virtual const char *what() const throw();
 	};
+	class NotSignedException : public std::exception
+	{
+	public :
+		NotSignedException();
+		virtual const char *what() const throw();
+	};
+	class NoExecAuthorityException : public std::exception
+	{
+	public :
+		NoExecAuthorityException();
+		virtual const char *what() const throw();
+	};
 
 public:
 	Form();
@@ -46,15 +58,16 @@ public:
 		int const signGrade, int const executeGrade);
 	Form(const Form& other);
 	Form& operator=(const Form& other);
-	~Form();
+	virtual ~Form();
 
 	std::string const& getFormName() const;
 	bool	getIsSigned() const;
 	int getSignGrade() const;
 	int getExecuteGrade() const;
 
-	void	setIsSigned(bool isSigned);
-	void	makeSigned(const Bureaucrat &bureaucrat);
+	void	beSigned(const Bureaucrat &bureaucrat);
+
+	virtual void	execute(Bureaucrat const &executor) const = 0;
 };
 
 std::ostream&	operator<<(std::ostream &os, const Form& form);

@@ -6,12 +6,12 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 22:01:18 by dim               #+#    #+#             */
-/*   Updated: 2022/04/26 22:02:05 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 16:49:01 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _WRONGANIMAL_H__
-# define _WRONGANIMAL_H__
+#ifndef _WRONGANIMAL_HPP__
+# define _WRONGANIMAL_HPP__
 #include <iostream>
 #include <string>
 

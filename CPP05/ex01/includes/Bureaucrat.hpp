@@ -6,12 +6,12 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 22:54:22 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 03:20:19 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/29 16:32:14 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _BUREAUCRAT_H__
-#define _BUREAUCRAT_H__
+#ifndef _BUREAUCRAT_HPP__
+#define _BUREAUCRAT_HPP__
 #include <iostream>
 #include <exception>
 #include <string>
@@ -57,8 +57,6 @@ public:
 	void	decreaseGrade();
 
 	void	signForm(Form &form);
-
-	void	executeForm(Form const &form);
 };
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat& bureaucrat);

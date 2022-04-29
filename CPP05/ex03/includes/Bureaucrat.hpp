@@ -6,14 +6,18 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 22:54:22 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 16:51:01 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 16:51:11 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _BUREAUCRAT_HPP__
 #define _BUREAUCRAT_HPP__
 #include <iostream>
+#include <exception>
 #include <string>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat 
 {
@@ -27,7 +31,7 @@ private:
 		int grade;
 
 	public :
-		GradeTooHighException();
+		GradeTooHighException(int grade);
 		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
@@ -36,7 +40,7 @@ private:
 		int grade;
 
 	public :
-		GradeTooLowException();
+		GradeTooLowException(int grade);
 		virtual const char *what() const throw(); //이 함수 내에서는 thorow하지 않음
 	};
 	
@@ -51,6 +55,10 @@ public:
 	int getGrade() const;
 	void	increaseGrade();
 	void	decreaseGrade();
+
+	void	signForm(Form &form);
+
+	void	executeForm(Form const &form);
 };
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat& bureaucrat);

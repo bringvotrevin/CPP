@@ -6,12 +6,12 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 02:06:30 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 03:04:32 by dim              ###   ########.fr       */
+/*   Updated: 2022/04/29 23:59:46 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FORM_H__
-# define _FORM_H__
+#ifndef _FORM_HPP__
+# define _FORM_HPP__
 #include <iostream>
 #include <exception>
 #include <string>
@@ -53,10 +53,7 @@ public:
 	int getSignGrade() const;
 	int getExecuteGrade() const;
 
-	void	setIsSigned(bool isSigned);
-	void	makeSigned(const Bureaucrat &bureaucrat);
-
-	void	execute(Bureaucrat const &executor) const;
+	void	beSigned(const Bureaucrat &bureaucrat);
 };
 
 std::ostream&	operator<<(std::ostream &os, const Form& form);
