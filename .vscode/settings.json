@@ -66,5 +66,7 @@
 		"fstream": "cpp",
 		"stack": "cpp",
 		"filesystem": "cpp"
-	}
+	},
+	"debug.console.wordWrap": false,
+	"editor.minimap.enabled": false
 }
