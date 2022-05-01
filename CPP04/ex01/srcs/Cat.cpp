@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 18:07:51 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 04:22:36 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/30 20:41:23 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cat::Cat()
 Cat::Cat(const Cat& other)
 {
 	std::cout << "Cat Copy constructor called" << std::endl;
-	brain = new Brain;
+	brain = new Brain();
 	*this = other;
 }
 

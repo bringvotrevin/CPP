@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 17:35:10 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 04:38:17 by dim              ###   ########seoul.kr  */
+/*   Created: 2022/04/30 20:06:46 by dim               #+#    #+#             */
+/*   Updated: 2022/04/30 20:33:26 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
-#include "../includes/Dog.hpp"
-#include "../includes/Cat.hpp"
-#include "../includes/WrongCat.hpp"
-#include "../includes/WrongAnimal.hpp"
-#include "../includes/Brain.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
+#include "Brain.hpp"
 
-void	leee()
+void ll()
 {
 	std::cout << "\n============[ Subject Test ]============" << std::endl;
 	const Animal* j = new Dog();
@@ -30,12 +30,17 @@ void	leee()
 	Dog dd;
 	Dog dodo;
 
+	dd.changeIdea("omg");
+	Dog og(dd);
+	dd.sayIt();
+
 	dd.changeIdea("dd");
+	dodo.changeIdea("dodo");
+	og.sayIt();
 	dd.sayIt();
-	dd = dodo;
-	dd.sayIt();
-	dodo.changeIdea("what?");
+	og.sayIt();
 	dodo.sayIt();
+	dd = dodo;
 	dd.sayIt();
 
 	std::cout << "\n============[ Array Test ]============" << std::endl;
@@ -65,9 +70,9 @@ void	leee()
 	}
 }
 
-int		main()
+int main()
 {
-	leee();
-	system("leaks animal");
-	return 0;
+	ll();
+	// system("leaks animal");
+	return (0);
 }

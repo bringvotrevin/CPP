@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:53:22 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 03:34:31 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/30 20:42:43 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 Brain::Brain()
 {
+	setIdeas("\0");
 	std::cout << "Brain Default constructor called" << std::endl;
 }
 
-Brain::Brain(std::string idea)
+Brain::Brain(const std::string &idea)
 {
 	setIdeas(idea);
 	std::cout << "Brain Conversion constructor called" << std::endl;
@@ -31,7 +32,7 @@ Brain::Brain(const Brain& other)
 
 Brain &Brain::operator=(const Brain& other)
 {
-	for (int i = 100; i < 100; i++)
+	for (int i = 0; i < 100; i++)
 	{
 		ideas[i] = other.ideas[i];
 	}

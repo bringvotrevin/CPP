@@ -6,23 +6,25 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 18:07:57 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 04:12:07 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/30 20:40:22 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Dog.hpp"
 
 Dog::Dog()
-: Animal("dog")
+: Animal("dog"), brain(NULL)
 {
+	std::cout << "Dog Default constructor called" << std::endl;
 	brain = new Brain;
 	brain->setIdeas("dog");
-	std::cout << "Dog Default constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& other)
+: Animal(other)
 {
 	std::cout << "Dog Copy constructor called" << std::endl;
+	brain = new Brain();
 	*this = other;
 }
 

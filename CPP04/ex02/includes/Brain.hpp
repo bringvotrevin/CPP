@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 23:59:16 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 16:50:32 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/04/30 19:58:50 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 	std::string ideas[100];
 public:
 	Brain();
-	Brain(std::string idea);
+	Brain(const std::string &idea);
 	Brain(const Brain& other);
 	Brain& operator=(const Brain& other);
 	~Brain();
