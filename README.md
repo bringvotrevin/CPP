@@ -18,8 +18,34 @@ char literals : 'c', 'a', ...
 int literals : 0, -42, 42...
 
 float literals : 0.0f, -4.2f, 4.2f...
+  nan, -inff, +inff도 처리해야 함
 
 double literals : 0..0, -4.2, 4.2...
+  nan, -inf, +inf도 처리해야 함
+
+먼저 
+1) 파라미터로 패스된 타입을 가려내고,
+2) string형태에서 원래 타입으로 변환시킨 후,
+3) 나머지 세개의 다른 데이터 타입으로 변환해야한다.
+4) 마지막으로 아래와 같이 결과를 출력해야 한다
+
+```
+./convert 0
+char: Non displayable
+int: 0
+float: 0.0f
+double: 0.0
+./convert nan
+char: impossible
+int: impossible
+float: nanf
+double: nan
+./convert 42.0f
+char: '*'
+int: 42
+float: 42.0f
+```
+
 
 
 * 상수와 리터럴 => 상수는 변하지 않는 변수(메모리 위치), 리터럴은 변수의 값이 변하지 않는 데이터(메밀 위치 안의 값)을 뜻한다.
