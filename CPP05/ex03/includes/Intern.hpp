@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 00:58:45 by dim               #+#    #+#             */
-/*   Updated: 2022/04/30 04:36:23 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/04 00:30:32 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,19 @@
 #include "Form.hpp"
 #include <iostream>
 
-class Intern;
-
 class Intern
 {
 private:
-	class NotMatchingFormName : public std::exception
+	class NoMatchingFormName : public std::exception
 	{
 	public :
-		NotMatchingFormName();
+		NoMatchingFormName();
 		virtual const char *what() const throw();
 	};
 public:
 	Intern();
 	Intern(const Intern& other);
-	Intern& operator=(const Intern& rhs);
+	Intern& operator=(const Intern& other);
 	~Intern();
 
 	Form	*makeForm(std::string const &formName, std::string const &target);

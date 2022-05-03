@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 22:54:22 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 16:32:14 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/03 21:40:37 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,19 @@ class Form;
 class Bureaucrat 
 {
 private: 
-	std::string name;
+	const std::string name;
 	int grade;
 
 	class GradeTooHighException : public std::exception
 	{
-	private:
-		int grade;
-
 	public :
-		GradeTooHighException(int grade);
+		GradeTooHighException();
 		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
-	private :
-		int grade;
-
 	public :
-		GradeTooLowException(int grade);
+		GradeTooLowException();
 		virtual const char *what() const throw(); //이 함수 내에서는 thorow하지 않음
 	};
 	

@@ -6,11 +6,11 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 00:01:39 by dim               #+#    #+#             */
-/*   Updated: 2022/04/30 00:32:29 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/04 00:02:01 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(): name("default"), grade(150) {}
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade): name(name) {
 	if (grade < 1 || grade > 150)
 	{
 		std::cout << "< " << name << " >" << "BUREAUCRAT'S GRADE ";
-		grade < 1 ? throw GradeTooHighException(grade) : throw GradeTooLowException(grade);
+		grade < 1 ? throw GradeTooHighException() : throw GradeTooLowException();
 	}
 	else
 		this->grade = grade;
@@ -29,15 +29,14 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other) {
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
-	name = other.name;
 	grade = other.grade;
 	return (*this);
 }
 
-Bureaucrat::~Bureaucrat() {}
+Bureaucrat::GradeTooHighException::GradeTooHighException() {}
+Bureaucrat::GradeTooLowException::GradeTooLowException() {}
 
-Bureaucrat::GradeTooHighException::GradeTooHighException(int grade) { this->grade = grade; }
-Bureaucrat::GradeTooLowException::GradeTooLowException(int grade) { this->grade = grade; }
+Bureaucrat::~Bureaucrat() {}
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
 	return ("ERROR : TOO HIGH GRADE");
@@ -57,14 +56,14 @@ int Bureaucrat::getGrade() const{
 
 void Bureaucrat::increaseGrade() {
 	if (grade - 1 < 1)
-		throw GradeTooHighException(grade - 1);
+		throw GradeTooHighException();
 	else
 		grade--;
 }
 
 void Bureaucrat::decreaseGrade() {
 	if (grade + 1 > 150)
-		throw GradeTooLowException(grade + 1);
+		throw GradeTooLowException();
 	else
 		grade++;
 }

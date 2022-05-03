@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 01:10:31 by dim               #+#    #+#             */
-/*   Updated: 2022/04/30 04:59:12 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/04 00:33:10 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int main() {
       someRandomIntern.makeForm("robotomy request", "robotoTarget"),
       someRandomIntern.makeForm("presidential pardon", "presidentialTarget")};
 
-  someRandomIntern.makeForm("shrubberry creation", "SR");
+  someRandomIntern.makeForm("somthing else form", "SE");
 
-  std::cout << "[ No Sign Error Test ]\n\n";
+  std::cout << "\n[ No Sign Error Test ]\n\n";
   for (int i = 0; i < 3; i++) {
     bu.executeForm(*forms[i]);
     re.executeForm(*forms[i]);

@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 01:10:31 by dim               #+#    #+#             */
-/*   Updated: 2022/04/30 00:43:24 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/04 00:14:33 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int main(void)
     cr.executeForm(*forms[i]);
     at.executeForm(*forms[i]);
     std::cout << '\n';
-  }   
+  }
+
   std::cout << "\n[ Can you Sign Test ]\n\n";
   for (int i = 0; i < 3; i++) {
     bu.signForm(*forms[i]);

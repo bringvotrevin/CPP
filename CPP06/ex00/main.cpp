@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 20:20:47 by dim               #+#    #+#             */
-/*   Updated: 2022/05/02 23:20:10 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/03 21:17:09 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		main(int argc, char *argv[])
 		return (0);
 	}
 	size_t found;
-	std::string str("12424f");
+	std::string str("inf");
 	if ((found = str.find("inf")) != std::string::npos) {
 		str.replace(found, 3, kInf);
 	}
@@ -38,7 +38,7 @@ int		main(int argc, char *argv[])
 		str.erase(found, 1);
 		f_flag = true;
 	}
-
+	
 	std::istringstream iss(str);
 	iss.exceptions( std::ifstream::failbit | std::ifstream::badbit );
 	double d;
@@ -46,6 +46,7 @@ int		main(int argc, char *argv[])
 	try {
 		iss >> d;
 	} catch (std::exception& e) {
+		std::cout << "!!!!!\n";
 		std::cout << std::showpos << d << '\n';
 	}
 	

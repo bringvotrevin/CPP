@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 02:37:10 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 23:59:39 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/03 23:25:29 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ Form::Form(std::string formname, \
 {
 	if (signGrade < 1 || signGrade > 150)
 	{
-		std::cout << "< " << formname << " >" << "FORM'S SIGN ";
+		std::cout << "< " << formname << " >" << " FORM'S SIGN ";
 		signGrade < 1 ? \
 			throw GradeTooHighException() : throw GradeTooLowException();
 	}
 	if (executeGrade < 1 || executeGrade > 150)
 	{
-		std::cout << "< " << formname << " >"  << "FORM'S EXECUTE ";
+		std::cout << "< " << formname << " >"  << " FORM'S EXECUTE ";
 		executeGrade < 1 ? \
 			throw GradeTooHighException() : throw GradeTooLowException();
 	}
@@ -53,6 +53,7 @@ Form::~Form() {}
 
 Form::GradeTooHighException::GradeTooHighException() {}
 Form::GradeTooLowException::GradeTooLowException() {}
+Form::AlreadySignedFormException::AlreadySignedFormException() {}
 
 const char *Form::GradeTooHighException::what() const throw() {
 	return ("GRADE IS TOO HIGH");
@@ -60,6 +61,10 @@ const char *Form::GradeTooHighException::what() const throw() {
 
 const char *Form::GradeTooLowException::what() const throw() {
 	return ("GRADE IS TOO LOW");
+}
+
+const char *Form::AlreadySignedFormException::what() const throw() {
+	return ("THE FORM IS ALREADY SIGNED");
 }
 
 std::string const& Form::getFormName() const {
@@ -79,18 +84,17 @@ int Form::getExecuteGrade() const {
 }
 
 void Form::beSigned(const Bureaucrat &bureaucrat) {
-	if (isSigned == false)
-	{	
-		if (signGrade < bureaucrat.getGrade())
-		{
-			std::cout << "< " << bureaucrat.getName() << " >" << " couldn't sign " \
-						<< this->getFormName() << " because ";
+
+	if (signGrade < bureaucrat.getGrade() || isSigned == true)
+	{
+		std::cout << "< " << bureaucrat.getName() << " >" << " couldn't sign " \
+					<< getFormName() << " because ";
+		if (isSigned == true)
+			throw AlreadySignedFormException();
+		else
 			throw GradeTooLowException();
-		}
-		isSigned = true;
 	}
-	else
-		std::cout << "< " << getFormName() << " >" << "is signed already" << std::endl;
+	isSigned = true;
 }
 
 std::ostream& operator<<(std::ostream &os, const Form& form) {

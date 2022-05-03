@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 01:10:31 by dim               #+#    #+#             */
-/*   Updated: 2022/04/28 04:28:03 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/03 23:41:55 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,19 @@ int main(void) {
   std::cout << "----[ Before Test ]----\n";
   Bureaucrat albert("Albert", 3);
   Form       paper("paper", 1, 1);
-  Form       form("form", 4, 4);
+  Form       taxform("taxform", 4, 4);
 
   std::cout << albert << '\n';
   std::cout << paper << '\n';
-  std::cout << form << '\n';
+  std::cout << taxform << '\n';
 
   std::cout << "\n----[ Start Test ]----\n";
   try {
-    albert.signForm(form);
+    albert.signForm(taxform);
   } catch (const std::exception &e) {
     std::cout << e.what() << '\n';
   }
-  std::cout << form << '\n';
+  std::cout << taxform << '\n';
 
   try {
     albert.signForm(paper);
@@ -50,6 +50,8 @@ int main(void) {
   std::cout << paper << '\n';
 
   albert.increaseGrade();
+  std::cout << albert << "\n\n";
+  
   try {
     albert.signForm(paper);
   } catch (const std::exception &e) {
@@ -58,6 +60,8 @@ int main(void) {
   std::cout << paper << '\n';
 
   albert.increaseGrade();
+  std::cout << albert << "\n\n";
+
   try {
     albert.signForm(paper);
   } catch (const std::exception &e) {

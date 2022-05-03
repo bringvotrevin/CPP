@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 00:59:29 by dim               #+#    #+#             */
-/*   Updated: 2022/04/30 04:53:24 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/04 00:23:10 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ Intern& Intern::operator=(const Intern& other)
 
 Intern::~Intern() {}
 
-Intern::NotMatchingFormName::NotMatchingFormName() {}
+Intern::NoMatchingFormName::NoMatchingFormName() {}
 
-const char *Intern::NotMatchingFormName::what() const throw()
+const char *Intern::NoMatchingFormName::what() const throw()
 {
 	return ("cannot find matching form");
 }
@@ -63,7 +63,7 @@ Form	*Intern::makeForm(std::string const &formName, std::string const &target)
 				return (form);
 			}
 		}
-		throw (NotMatchingFormName());
+		throw (NoMatchingFormName());
 	}
 	catch(const std::exception& e)
 	{

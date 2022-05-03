@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 00:01:39 by dim               #+#    #+#             */
-/*   Updated: 2022/04/28 04:18:04 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/03 21:20:17 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other) {
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
-	name = other.name;
 	grade = other.grade;
 	return (*this);
 }
@@ -54,14 +53,14 @@ int Bureaucrat::getGrade() const{
 
 void Bureaucrat::increaseGrade() {
 	if (grade - 1 < 1)
-		throw GradeTooHighException(grade - 1);
+		throw GradeTooHighException();
 	else
 		grade--;
 }
 
 void Bureaucrat::decreaseGrade() {
 	if (grade + 1 > 150)
-		throw GradeTooLowException(grade + 1);
+		throw GradeTooLowException();
 	else
 		grade++;
 }

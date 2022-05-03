@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 02:06:30 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 23:59:29 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/03 23:23:16 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ private:
 	{
 	public :
 		GradeTooLowException();
+		virtual const char *what() const throw();
+	};
+	class AlreadySignedFormException : public std::exception
+	{
+	public :
+		AlreadySignedFormException();
 		virtual const char *what() const throw();
 	};
 	class NotSignedException : public std::exception
