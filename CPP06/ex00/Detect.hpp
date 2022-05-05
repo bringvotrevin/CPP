@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:50:15 by dim               #+#    #+#             */
-/*   Updated: 2022/05/05 21:13:39 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/06 07:03:15 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@
 #include <string>
 #include <iomanip>
 #include <sstream>
+#include <fstream>
 
 class Detect
 {
 public :
-	// enum Type {
-	// 	CHAR_,
-	// 	INT_,
-	// 	FLOAT_,
-	// 	DOUBLE_
-	// };
+	enum Type {
+		INIT_,
+		CHAR_,
+		INT_,
+		FLOAT_,
+		DOUBLE_
+	};
 	
 	Detect();
 	Detect(const std::string input);
@@ -38,12 +40,28 @@ public :
 
 private :
 	const std::string input;
-	// Type	type;
+	Type	type;
 	bool	fFlag;
 	bool	dotFlag;
 	bool	isNan;
 	bool	isInf;
+	bool	minus;
 
+	void	isOnlyNum(std::string input);
+	void	toType(std::istringstream& iss);
+	void	typeChar(std::istringstream& iss);
+	void	typeInt(std::istringstream& iss);
+	void	typeFloat(std::istringstream& iss);
+	void	typeDouble(std::istringstream& iss);
+
+	void	printInt();
+	void	printFloat();
+	void	printDouble();
+
+	char	c_;
+	int		i_;
+	float	f_;
+	double	d_;
 
 };
 

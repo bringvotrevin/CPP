@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 20:20:47 by dim               #+#    #+#             */
-/*   Updated: 2022/05/05 20:45:21 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/06 01:08:14 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		main(int argc, char *argv[])
 	// 	std::cout << std::showpos << d << '\n';
 	// }
 	std::istringstream iss(argv[1]);
-	float f;
+	char f;
 	iss >> f;
 	std::cout << f << std::endl;
 	float t = 42.f;
