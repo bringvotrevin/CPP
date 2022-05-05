@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 18:07:59 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 16:49:48 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/05 19:50:15 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 public:
 	Dog();
 	Dog(const Dog& other);
-	Dog& operator=(const Dog& rhs);
+	Dog& operator=(const Dog& other);
 	~Dog();
 
 	void	makeSound() const;
