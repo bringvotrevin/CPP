@@ -7,6 +7,25 @@
 ## CPP03
 ## CPP04
 ## CPP05
+ex00부터 ex03까지 bureaucrat(공무원..?이라 칭함), Form(서류)-(파생서류들: Shrubbery, Robotomy, Presidential), Intern(인턴)을 각각 class로 만들어서 사용함 
+각 과정에서 오류가 날 경우 try & catch문으로 받아줘야함 
+각 클래스 안에서 오류시 exception 클래스를 상속받는 오류 클래스들을 throw해야 하기 때문에 각각 클래스 안에 GradeTooHightException같은 클래스들을 따로 선언해줘야함
+### ex00
+  bureaucrat(공무원..?이라 칭함)class 만들기
+  이름과 등급을 멤버변수로 가지고 있다. 실제 공무원처럼 숫자가 낮을수록 높은 지위에 있음
+
+### ex01
+  Form(서류)class 만들기. 
+  이름과 싸인 되었는지 여부(isSigned), 서류에 싸인이 가능한 (공무원의)등급, 서류를 실행? 가능한 등급을 멤버변수로 가지고 있음.
+  공무원 클래스에 form을 인자로 받는 signForm 함수를 추가해서 공무원 레벨과 서류의 사인 레벨을 비교한 뒤 가능할 경우 isSigned를 true로 바꾸는 beSigned 메서드를 form이 가지고 있어야함
+ ### ex02
+  Form의 파생클래스들 만들기 Shrubbery, Robotomy, Presidential
+  ex01번의 signForm 함수와 같이 실행 함수도 추가한다 공무원 클래스에 executeForm 함수를 추가, form에도 execute함수가 추가되고 이건 순수가상함수로 선언되어야함 그래야 execute 함수 실행시 파생클래스의 execute로 잘 연결이 되기 때문
+  파생 클래스들은 각각 싸인레벨, 실행 레벨이 다르고 execute되었을 경우 실행하는 행동들이 다름
+  
+  ### ex03
+  인턴 만들기 
+  form type 이름(shru, robo, presi 어쩌구 등등)을 인자로 받아서 makeForm을 한다
 
 ## CPP06
 ### 1.ex00
