@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:50:11 by dim               #+#    #+#             */
-/*   Updated: 2022/05/06 07:16:48 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/06 16:55:58 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,35 @@ Detect& Detect::operator=(const Detect& other) {
 	return (*this);
 }
 Detect::~Detect() {}
+
+void	Detect::printChar()
+{
+	if (type == FLOAT_)
+	{
+		if (isNan || isInf) {
+			std::cout << "char: impossible\n";
+		} else if (f_ >= -128 && f_ <= 127) {
+			if (f_ >= 32 && f_ <= 126)
+				std::cout << "char: '" << static_cast<char>(f_) << "'\n";
+			else
+				std::cout << "char: Non displayable\n";
+		} else {
+			std::cout << "char: impossible\n";
+		}
+	} else
+	{
+		if (isNan || isInf) {
+			std::cout << "char: impossible\n";
+		} else if (d_ >= -128 && d_ <= 127) {
+			if (d_ >= 32 && d_ <= 126)
+				std::cout << "char: '" << static_cast<char>(d_) << "'\n";
+			else
+				std::cout << "char: Non displayable\n";
+		} else {
+			std::cout << "char: impossible\n";
+		}
+	}
+}
 
 void Detect::printInt()
 {
@@ -78,17 +107,22 @@ void	Detect::printFloat()
 	}
 	if (type == FLOAT_)
 	{
-		std::cout << "float: " << f_ << "f\n";
+		if (f_ == floor(f_))
+			std::cout << std::fixed << std::setprecision(1) << "float: " << f_ << "f\n";
+		else
+			std::cout << "float: " << f_ << "f\n";
 	}
 	if (type == DOUBLE_)
 	{
 		if (d_ > std::numeric_limits<float>::max() \
-		|| d_ < std::numeric_limits<float>::min())
+		|| d_ < -FLT_MAX)
 			std::cout << "float: impossible\n";
 		else
 		{
-			std::cout << "float: " << d_ << "f\n";
-			return ;
+			if (d_ == floor(d_))
+				std::cout << std::fixed << std::setprecision(1) << "float: " << d_ << "f\n";
+			else
+				std::cout << "float: " << d_ << "f\n";
 		}
 	}
 }
@@ -111,10 +145,23 @@ void	Detect::printDouble()
 		std::cout << "inf\n";
 		return ;
 	}
+	else if (type == FLOAT_)
+	{
+		if (f_ == floor(f_))
+				std::cout << std::fixed << std::setprecision(1) << "double: " << f_ << "\n";
+			else
+				std::cout << "double: " << f_ << "\n";
+	}
 	else
 	{
-		std::cout << "double: " << d_ << '\n';
-	}	
+		if (d_ == floor(d_))
+		{
+				std::cout << std::fixed << std::setprecision(1) << "double: " << d_ << "\n";
+				std::cout << "@@@@@@\n"; 
+		}
+		else
+			std::cout << "double: " << d_ << "\n";
+	}
 }
 
 void	Detect::findAndReplace(std::string& newInput)
@@ -165,10 +212,8 @@ void	Detect::typeChar(std::istringstream& iss)
 
 void	Detect::typeInt(std::istringstream& iss)
 {
-	// iss.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 	try {
 		iss >> i_;
-		// std::cout << "i?? " << i_ << std::endl;
 		if (!iss.eof())
 			throw std::invalid_argument("invalid argument");
 		if (iss.fail())
@@ -207,19 +252,10 @@ void	Detect::typeFloat(std::istringstream& iss)
 			throw std::overflow_error("the type conversion is impossible <float overflow>");
 		throw ;
 	}
-	if (f_ >= -128 && f_ <= 127)
-	{
-		if (f_ >= 32 && f_ <= 126)
-			std::cout << "char: '" << static_cast<char>(f_) << "'\n";
-		else
-			std::cout << "char: Non displayable\n";
-	} else {
-		std::cout << "char: impossible\n";
-	}
+	printChar();
 	printInt();
 	printFloat();
-	// std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(f_) << "f\n";
-	std::cout << "double: " << static_cast<double>(f_) << "\n";
+	printDouble();
 }
 
 void	Detect::typeDouble(std::istringstream& iss)
@@ -236,16 +272,7 @@ void	Detect::typeDouble(std::istringstream& iss)
 			throw std::overflow_error("the type conversion is impossible <double overflow>");
 		throw ;
 	}
-	// std::cout << "d_????? " << d_ << '\n';
-	if (f_ >= -128 && f_ <= 127)
-	{
-		if (f_ >= 32 && f_ <= 126)
-			std::cout << "char: '" << static_cast<char>(f_) << "'\n";
-		else
-			std::cout << "char: Non displayable\n";
-	} else {
-		std::cout << "char: impossible\n";
-	}
+	printChar();
 	printInt();
 	printFloat();
 	printDouble();
@@ -253,7 +280,6 @@ void	Detect::typeDouble(std::istringstream& iss)
 
 void	Detect::toType(std::istringstream& iss)
 {
-	// iss.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 	if (type == CHAR_)
 	{
 		typeChar(iss);
@@ -279,11 +305,12 @@ void	Detect::isOnlyNum(std::string input)
 	if (type != CHAR_)
 	{
 		std::istringstream iss(input);
-		// iss.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 		double check;
 		iss >> check;
-		if (!iss.eof() || iss.fail())
-			throw std::invalid_argument("invalid argument in isOnlyNum");
+		if (!iss.eof() || (iss.fail() && type == FLOAT_))
+			throw std::invalid_argument("invalid argument");
+		if (iss.fail())
+			throw std::overflow_error("the type conversion is impossible <double overflow>");
 	}
 }
 
@@ -309,8 +336,6 @@ void	Detect::detectType()
 	else if (type != CHAR_)
 		type = INT_;
 	isOnlyNum(newInput);
-	// std::cout << "type : " << type << std::endl;
-	// std::cout << "newInput????? " << newInput << '\n';
 	std::istringstream iss(newInput);
 	toType(iss);
 }

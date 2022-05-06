@@ -65,7 +65,8 @@
 		"deque": "cpp",
 		"fstream": "cpp",
 		"stack": "cpp",
-		"filesystem": "cpp"
+		"filesystem": "cpp",
+		"cfloat": "cpp"
 	},
 	"debug.console.wordWrap": false,
 	"editor.minimap.enabled": false

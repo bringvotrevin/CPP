@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:50:15 by dim               #+#    #+#             */
-/*   Updated: 2022/05/06 07:03:15 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/06 16:42:18 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iomanip>
 #include <sstream>
 #include <fstream>
+#include <cfloat>
 
 class Detect
 {
@@ -54,6 +55,7 @@ private :
 	void	typeFloat(std::istringstream& iss);
 	void	typeDouble(std::istringstream& iss);
 
+	void	printChar();
 	void	printInt();
 	void	printFloat();
 	void	printDouble();
