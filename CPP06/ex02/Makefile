@@ -1,9 +1,9 @@
-NAME		=	serialize
+NAME		=	identify
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Wall -std=c++98
 
 SRCS	=	main.cpp \
-			Data.cpp
+			Base.cpp
 			
 OBJS 	=	$(SRCS:.cpp=.o)
 

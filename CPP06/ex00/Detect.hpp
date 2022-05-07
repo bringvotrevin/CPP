@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:50:15 by dim               #+#    #+#             */
-/*   Updated: 2022/05/07 16:36:32 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/08 02:16:17 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ public :
 	~Detect();
 
 	void	detectType();
-	void	findAndReplace(std::string& newInput);
 
 private :
 	const std::string input;
@@ -49,6 +48,7 @@ private :
 	bool	isInf;
 	bool	minus;
 
+	void	findAndReplace(std::string& newInput);
 	void	isOnlyNum(std::string input);
 	void	toType(std::istringstream& iss);
 	void	typeChar(std::istringstream& iss);

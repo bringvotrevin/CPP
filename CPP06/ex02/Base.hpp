@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 17:01:27 by dim               #+#    #+#             */
-/*   Updated: 2022/05/07 20:46:21 by dim              ###   ########seoul.kr  */
+/*   Created: 2022/05/07 21:52:05 by dim               #+#    #+#             */
+/*   Updated: 2022/05/08 04:35:43 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#ifndef BASE_HPP
+#define BASE_HPP
 
-uintptr_t	serialize(Data* ptr)
+class Base
 {
-	return (reinterpret_cast<uintptr_t>(ptr));
-}
+	public :
+		virtual ~Base();
+};
 
-Data*	deserialize(uintptr_t raw)
-{
-	return (reinterpret_cast<Data*>(raw));
-}
+#endif

@@ -1,9 +1,8 @@
-NAME		=	serialize
+NAME		=	array
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Wall -std=c++98
 
 SRCS	=	main.cpp \
-			Data.cpp
 			
 OBJS 	=	$(SRCS:.cpp=.o)
 

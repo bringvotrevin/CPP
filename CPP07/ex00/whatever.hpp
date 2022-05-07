@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 17:01:27 by dim               #+#    #+#             */
-/*   Updated: 2022/05/07 20:46:21 by dim              ###   ########seoul.kr  */
+/*   Created: 2022/05/08 04:34:58 by dim               #+#    #+#             */
+/*   Updated: 2022/05/08 05:33:39 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
+#include <iostream>
 
-uintptr_t	serialize(Data* ptr)
+
+template<typename T>
+void	swap(T& a, T& b)
 {
-	return (reinterpret_cast<uintptr_t>(ptr));
+	T t;
+	t = a;
+	a = b;
+	b = t;
 }
 
-Data*	deserialize(uintptr_t raw)
+template<typename T>
+T	max(T& a, T& b)
 {
-	return (reinterpret_cast<Data*>(raw));
+	return (a > b ? a : b);
 }
+
+template<typename T>
+T	min(T& a, T& b)
+{
+	return (a >= b ? b : a);
+}
+// const로도 만들어야하는가??
+
+#endif

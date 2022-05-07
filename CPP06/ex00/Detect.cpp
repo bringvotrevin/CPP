@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:50:11 by dim               #+#    #+#             */
-/*   Updated: 2022/05/07 16:53:52 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/08 02:18:05 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,41 +161,6 @@ void	Detect::printDouble()
 	}
 }
 
-void	Detect::findAndReplace(std::string& newInput)
-{
-	size_t i = 0;
-	if (newInput[0] == '-')
-		minus = true;
-	if ((i = newInput.find("nan")) != std::string::npos)
-	{
-		isNan = true;
-		newInput.replace(i, 3, "0.0");
-		i = newInput.find_first_not_of("+-0.0f");
-		if (i != std::string::npos)
-			throw std::invalid_argument("invalid argument");
-	}
-	else if ((i = newInput.find("inf")) != std::string::npos)
-	{
-		isInf = true;
-		newInput.replace(i, 3, "0.0");
-		i = newInput.find_first_not_of("+-0.0f");
-		if (i != std::string::npos)
-			throw std::invalid_argument("invalid argument");
-	}
-	if (newInput.find(".") != std::string::npos)
-		dotFlag = true;
-	if ((i = newInput.find("f")) != std::string::npos)
-	{
-		if (dotFlag == true && i == (newInput.length() - 1))
-		{
-			fFlag = true;
-			newInput.replace(i, 1, "");
-		}
-		else
-			throw std::invalid_argument("invalid argument");
-	}
-}
-
 void	Detect::typeChar(std::istringstream& iss)
 {
 	iss >> c_;
@@ -294,6 +259,41 @@ void	Detect::toType(std::istringstream& iss)
 			break;
 		default :
 			break;
+	}
+}
+
+void	Detect::findAndReplace(std::string& newInput)
+{
+	size_t i = 0;
+	if (newInput[0] == '-')
+		minus = true;
+	if ((i = newInput.find("nan")) != std::string::npos)
+	{
+		isNan = true;
+		newInput.replace(i, 3, "0.0");
+		i = newInput.find_first_not_of("+-0.0f");
+		if (i != std::string::npos)
+			throw std::invalid_argument("invalid argument");
+	}
+	else if ((i = newInput.find("inf")) != std::string::npos)
+	{
+		isInf = true;
+		newInput.replace(i, 3, "0.0");
+		i = newInput.find_first_not_of("+-0.0f");
+		if (i != std::string::npos)
+			throw std::invalid_argument("invalid argument");
+	}
+	if (newInput.find(".") != std::string::npos)
+		dotFlag = true;
+	if ((i = newInput.find("f")) != std::string::npos)
+	{
+		if (dotFlag == true && i == (newInput.length() - 1))
+		{
+			fFlag = true;
+			newInput.replace(i, 1, "");
+		}
+		else
+			throw std::invalid_argument("invalid argument");
 	}
 }
 

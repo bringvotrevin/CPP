@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 17:01:27 by dim               #+#    #+#             */
-/*   Updated: 2022/05/07 20:46:21 by dim              ###   ########seoul.kr  */
+/*   Created: 2022/05/08 06:29:26 by dim               #+#    #+#             */
+/*   Updated: 2022/05/08 07:10:30 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
-uintptr_t	serialize(Data* ptr)
+template<typename T>
+class Array
 {
-	return (reinterpret_cast<uintptr_t>(ptr));
-}
+	private :
 
-Data*	deserialize(uintptr_t raw)
-{
-	return (reinterpret_cast<Data*>(raw));
-}
+	public :
+		Array();
+		Array(const Array& other);
+		Array& operator=(const Array& other);
+		~Array();
+		
+};
+
+#endif

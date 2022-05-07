@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 17:01:27 by dim               #+#    #+#             */
-/*   Updated: 2022/05/07 20:46:21 by dim              ###   ########seoul.kr  */
+/*   Created: 2022/05/08 05:36:37 by dim               #+#    #+#             */
+/*   Updated: 2022/05/08 06:28:12 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#ifndef ITER_HPP
+#define ITER_HPP
+#include <iostream>
 
-uintptr_t	serialize(Data* ptr)
+template<typename T>
+void	print(const T& t)
 {
-	return (reinterpret_cast<uintptr_t>(ptr));
+	std::cout << t << std::endl;
 }
 
-Data*	deserialize(uintptr_t raw)
+template<typename T>
+void	iter(T* array, std::size_t len, void (*fPtr)(const T&))
 {
-	return (reinterpret_cast<Data*>(raw));
+	if (!array || len <= 0)
+		return ;
+	for (size_t i = 0; i < len; i++)
+	{
+		(*fPtr)(array[i]);
+	}
 }
+
+#endif
