@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:50:15 by dim               #+#    #+#             */
-/*   Updated: 2022/05/06 16:42:18 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/07 16:36:32 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #define _DETECT_HPP__
 #include <iostream>
 #include <string>
-#include <iomanip>
+// #include <iomanip>
 #include <sstream>
 #include <fstream>
 #include <cfloat>
+#include <cmath>
 
 class Detect
 {

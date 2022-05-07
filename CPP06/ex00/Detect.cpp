@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:50:11 by dim               #+#    #+#             */
-/*   Updated: 2022/05/06 16:55:58 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/07 16:53:52 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	Detect::printFloat()
 	}
 	if (type == FLOAT_)
 	{
-		if (f_ == floor(f_))
+		if (f_ == floor(f_) || (abs(f_) >= 100000 && abs(f_) < 1000000))
 			std::cout << std::fixed << std::setprecision(1) << "float: " << f_ << "f\n";
 		else
 			std::cout << "float: " << f_ << "f\n";
@@ -119,7 +119,7 @@ void	Detect::printFloat()
 			std::cout << "float: impossible\n";
 		else
 		{
-			if (d_ == floor(d_))
+			if (d_ == floor(d_)|| (abs(d_) >= 100000 && abs(d_) < 1000000))
 				std::cout << std::fixed << std::setprecision(1) << "float: " << d_ << "f\n";
 			else
 				std::cout << "float: " << d_ << "f\n";
@@ -145,20 +145,17 @@ void	Detect::printDouble()
 		std::cout << "inf\n";
 		return ;
 	}
-	else if (type == FLOAT_)
+	if (type == FLOAT_)
 	{
-		if (f_ == floor(f_))
+		if (f_ == floor(f_) || (abs(f_) >= 100000 && abs(f_) < 1000000))
 				std::cout << std::fixed << std::setprecision(1) << "double: " << f_ << "\n";
 			else
 				std::cout << "double: " << f_ << "\n";
 	}
 	else
 	{
-		if (d_ == floor(d_))
-		{
+		if (d_ == floor(d_) || (abs(d_) >= 100000 && abs(d_) < 1000000))
 				std::cout << std::fixed << std::setprecision(1) << "double: " << d_ << "\n";
-				std::cout << "@@@@@@\n"; 
-		}
 		else
 			std::cout << "double: " << d_ << "\n";
 	}
