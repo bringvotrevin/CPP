@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:50:11 by dim               #+#    #+#             */
-/*   Updated: 2022/05/08 02:18:05 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/08 21:50:04 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void Detect::printInt()
 	if (type == FLOAT_)
 	{
 		if (f_ > std::numeric_limits<int>::max() \
-		|| f_ < std::numeric_limits<int>::min())
+			|| f_ < std::numeric_limits<int>::min())
 			std::cout << "int: impossible\n";
 		else
 		{
@@ -77,7 +77,7 @@ void Detect::printInt()
 	if (type == DOUBLE_)
 	{
 		if (d_ > std::numeric_limits<int>::max() \
-		|| d_ < std::numeric_limits<int>::min())
+			|| d_ < std::numeric_limits<int>::min())
 			std::cout << "int: impossible\n";
 		else
 		{
@@ -115,7 +115,7 @@ void	Detect::printFloat()
 	if (type == DOUBLE_)
 	{
 		if (d_ > std::numeric_limits<float>::max() \
-		|| d_ < -FLT_MAX)
+		|| d_ < (-1) * FLT_MAX)
 			std::cout << "float: impossible\n";
 		else
 		{
@@ -174,18 +174,11 @@ void	Detect::typeChar(std::istringstream& iss)
 
 void	Detect::typeInt(std::istringstream& iss)
 {
-	try {
-		iss >> i_;
-		if (!iss.eof())
-			throw std::invalid_argument("invalid argument");
-		if (iss.fail())
-			throw std::overflow_error("");
-	} catch (const std::exception& e) {
-		if (i_ == std::numeric_limits<int>::max() \
-			|| i_ == std::numeric_limits<int>::min())
-			throw std::overflow_error("the type conversion is impossible <integer overflow>");
-		throw ;
-	}
+	iss >> i_;
+	if (!iss.eof())
+		throw std::invalid_argument("invalid argument");
+	if (iss.fail())
+		throw std::range_error("the type conversion is impossible <integer range>");
 	if (i_ >= -128 && i_ <= 127)
 	{
 		if (i_ >= 32 && i_ <= 126)
@@ -202,18 +195,11 @@ void	Detect::typeInt(std::istringstream& iss)
 
 void	Detect::typeFloat(std::istringstream& iss)
 {
-	try {
-		iss >> f_;
-		if (!iss.eof())
-			throw std::invalid_argument("invalid argument");
-		if (iss.fail())
-			throw std::overflow_error("");
-	} catch (const std::exception& e) {
-		if (f_ == std::numeric_limits<float>::max() \
-			|| f_ == std::numeric_limits<float>::min())
-			throw std::overflow_error("the type conversion is impossible <float overflow>");
-		throw ;
-	}
+	iss >> f_;
+	if (!iss.eof())
+		throw std::invalid_argument("invalid argument");
+	if (iss.fail())
+		throw std::range_error("the type conversion is impossible <float range>");
 	printChar();
 	printInt();
 	printFloat();
@@ -222,18 +208,11 @@ void	Detect::typeFloat(std::istringstream& iss)
 
 void	Detect::typeDouble(std::istringstream& iss)
 {
-	try {
-		iss >> d_;
-		if (!iss.eof())
-			throw std::invalid_argument("invalid argument");
-		if (iss.fail())
-			throw std::overflow_error("");
-	} catch (const std::exception& e) {
-		if (d_ == std::numeric_limits<double>::max() \
-			|| d_ == std::numeric_limits<double>::min())
-			throw std::overflow_error("the type conversion is impossible <double overflow>");
-		throw ;
-	}
+	iss >> d_;
+	if (!iss.eof())
+		throw std::invalid_argument("invalid argument");
+	if (iss.fail())
+		throw std::range_error("the type conversion is impossible <double range>");
 	printChar();
 	printInt();
 	printFloat();
@@ -307,7 +286,13 @@ void	Detect::isOnlyNum(std::string input)
 		if (!iss.eof() || (iss.fail() && type == FLOAT_))
 			throw std::invalid_argument("invalid argument");
 		if (iss.fail())
-			throw std::overflow_error("the type conversion is impossible <double overflow>");
+		{
+			if (check == std::numeric_limits<double>::max() \
+				|| check == (-1) * DBL_MAX)
+				throw std::range_error("the type conversion is impossible <double range>");
+			else
+				throw std::invalid_argument("invalid argument");
+		}
 	}
 }
 

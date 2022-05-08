@@ -6,21 +6,23 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 19:52:56 by dim               #+#    #+#             */
-/*   Updated: 2022/05/06 05:52:42 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/08 18:47:00 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Detect.hpp"
 
-void	ft_trim(std::string& input)
+int		ft_trim(std::string& input)
 {
 	size_t start = 0;
 	size_t end = 0;
 
 	start = input.find_first_not_of(" \t\v\n");
 	end = input.find_last_not_of(" \t\v\n");
-	if (start != std::string::npos)
-		input = input.substr(start, end - start + 1);
+	if (start == std::string::npos && end == std::string::npos)
+		return (1);
+	input = input.substr(start, end - start + 1);
+	return (0);
 }
 
 int		main(int argc, char *argv[])
@@ -31,10 +33,9 @@ int		main(int argc, char *argv[])
 		return (0);
 	}
 	std::string input(argv[1]);
-	ft_trim(input);
-	if (input == "")
+	if (ft_trim(input))
 	{
-		std::cout << "ERROR : EXECUTE WITH ONE ARGUMENT" << std::endl;
+		std::cout << "ERROR : WRONG ARGUMENT" << std::endl;
 		return (0);
 	}
 	try {
@@ -42,7 +43,7 @@ int		main(int argc, char *argv[])
 	detect.detectType();
 	}
 	catch (const std::exception& e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cout << "ERROR: " << e.what() << std::endl;
 	}
 	return (0);
 }

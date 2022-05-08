@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:50:15 by dim               #+#    #+#             */
-/*   Updated: 2022/05/08 02:16:17 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/08 17:20:58 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define _DETECT_HPP__
 #include <iostream>
 #include <string>
-// #include <iomanip>
 #include <sstream>
 #include <fstream>
 #include <cfloat>
