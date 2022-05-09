@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 06:29:26 by dim               #+#    #+#             */
-/*   Updated: 2022/05/09 13:12:19 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/09 19:30:09 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ Array<T>::Array(const Array& other)
 template<typename T>
 Array<T> &Array<T>::operator=(const Array& other)
 {
+	if (this == &other)
+		return (*this);
 	delete[] data;
 	data = new T[other._size];
 	_size = other._size;
