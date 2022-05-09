@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 21:47:53 by dim               #+#    #+#             */
-/*   Updated: 2022/05/10 04:04:49 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/10 05:23:50 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ int main(void) {
       Span onespan(1);
       onespan.addNumber(32);
       onespan.shortestSpan();
+      Span two(2);
+      two.addNumber(23);
+      two.addNumber(2);
+      two.shortestSpan();
     } catch (const std::exception &e) {
       std::cout << e.what() << std::endl;
     }
