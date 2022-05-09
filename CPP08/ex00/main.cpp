@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 20:49:38 by dim               #+#    #+#             */
-/*   Updated: 2022/05/09 22:52:17 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/10 03:50:40 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int main()
 	}
 	try
 	{
+		std::cout << "=========== [ list ] =============\n\n";
 		easyfind(l, 123);
 	}
 	catch(const std::exception& e)
@@ -51,6 +52,7 @@ int main()
 	}
 	try
 	{
+		std::cout << "=========== [ vector ] =============\n\n";
 		easyfind(v, 456);
 	}
 	catch(const std::exception& e)
@@ -59,6 +61,7 @@ int main()
 	}
 	try
 	{
+		std::cout << "=========== [ deque ] =============\n\n";
 		easyfind(d, 10);
 	}
 	catch(const std::exception& e)

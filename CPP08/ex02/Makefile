@@ -1,9 +1,8 @@
-NAME		=	span
+NAME		=	mutant
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Wall -std=c++98
 
-SRCS	=	main.cpp \
-			Span.cpp
+SRCS	=	main.cpp
 			
 OBJS 	=	$(SRCS:.cpp=.o)
 

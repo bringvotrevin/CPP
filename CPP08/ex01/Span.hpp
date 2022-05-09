@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 23:31:45 by dim               #+#    #+#             */
-/*   Updated: 2022/05/09 23:40:01 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/10 01:29:25 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Span
 {
 	private :
 		unsigned int size;
-		std::multiset<unsigned int> ms;
+		std::multiset<int> ms;
 	public :
 		Span();
 		Span(unsigned int N);
@@ -32,10 +32,10 @@ class Span
 
 		template <typename InputIt>
 		void	addNumber(InputIt b, InputIt e);
+		const std::multiset<int> &getArray() const; 
 
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
-		const std::multiset<unsigned int> &Span::getArray() const; 
 };
 
 
@@ -44,9 +44,9 @@ void	Span::addNumber(InputIt b, InputIt e)
 {
 	for (; b != e; b++)
 	{
-		if (v.size() >= size)
-			throw std::out_of_range("[No space] cannot add number");
-		addNumber(*b);
+		if (ms.size() >= size)
+			throw std::out_of_range("No space to add number");
+		ms.insert(*b);
 	}
 }
 
