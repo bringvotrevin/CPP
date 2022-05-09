@@ -6,12 +6,11 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 05:13:52 by dim               #+#    #+#             */
-/*   Updated: 2022/05/08 05:34:40 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/09 13:10:29 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
-#include <iostream>
 
 int		main(void)
 {

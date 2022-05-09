@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 06:29:26 by dim               #+#    #+#             */
-/*   Updated: 2022/05/09 03:49:59 by dim              ###   ########.fr       */
+/*   Updated: 2022/05/09 13:12:19 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ template<typename T>
 class Array
 {
 	private :
-		unsigned int _size;
 		T*	data;
+		unsigned int _size;
 
 	public :
 		Array();
@@ -39,10 +39,7 @@ Array<T>::Array()
 
 template<typename T>
 Array<T>::Array(unsigned int n)
-{
-	data = new T[n];
-	_size = n;
-}
+: data(new T[n]), _size(n) {}
 
 template<typename T>
 Array<T>::~Array()
