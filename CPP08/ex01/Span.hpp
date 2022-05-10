@@ -6,12 +6,12 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 23:31:45 by dim               #+#    #+#             */
-/*   Updated: 2022/05/10 21:31:50 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/11 01:30:59 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_CPP
-#define SPAN_CPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
 #include <iostream>
 #include <set>
