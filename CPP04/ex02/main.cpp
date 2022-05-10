@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 17:35:10 by dim               #+#    #+#             */
-/*   Updated: 2022/04/30 20:43:01 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/10 19:21:57 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int		main()
 {
-	const Animal* meta = new Animal();
+	// const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	const WrongAnimal* k = new WrongCat();
@@ -30,9 +30,9 @@ int		main()
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	k->makeSound();
-	meta->makeSound();
+	// meta->makeSound();
 
-	delete meta;
+	// delete meta;
 	delete j;
 	delete i;
 	delete k;

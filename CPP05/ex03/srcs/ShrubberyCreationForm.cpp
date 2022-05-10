@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 18:50:43 by dim               #+#    #+#             */
-/*   Updated: 2022/05/03 21:41:10 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/10 21:15:25 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,13 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
+ShrubberyCreationForm::FileNotOpenException::FileNotOpenException() {}
+
+const char *ShrubberyCreationForm::FileNotOpenException::what() const throw()
+{
+	return ("CANNOT OPEN A FILE");
+}
+
 std::string	const &ShrubberyCreationForm::getTarget() const
 {
 	return (target);
@@ -38,6 +45,8 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	Form::execute(executor);
 	std::ofstream	W_file(target + "_shrubbery");
+	if (!W_file.fail())
+		throw FileNotOpenException();
 	W_file << "                                                         . " << std::endl;
 	W_file << "                                               .         ;   " << std::endl;
 	W_file << "                  .              .              ;%     ;;    " << std::endl;

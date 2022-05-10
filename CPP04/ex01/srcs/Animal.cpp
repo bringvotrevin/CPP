@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 17:40:15 by dim               #+#    #+#             */
-/*   Updated: 2022/04/27 04:19:27 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/10 19:16:58 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,4 @@ void	Animal::makeSound() const
 	std::cout << "(Silent)" << std::endl;
 }
 
-void	Animal::sayIt() const
-{}
+void	Animal::sayIt() const {}

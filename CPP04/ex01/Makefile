@@ -1,6 +1,6 @@
 NAME		=	animalbrain
 CXX			=	c++
-CXXFLAGS	=	-Wall -Wextra -Wall -std=c++98 $(INFLAGS)
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 $(INFLAGS)
 INFLAGS		=	-I$(INCDIR)
 INCDIR		=	./includes/
 SRCDIR		= 	srcs/

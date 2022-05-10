@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 02:22:47 by dim               #+#    #+#             */
-/*   Updated: 2022/05/10 04:07:52 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/10 21:19:02 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class MutantStack : public std::stack<T, C>
 		typedef typename
 			std::stack<T, C>::container_type::const_reverse_iterator const_reverse_iterator;
 		MutantStack() : std::stack<T, C>() {}
-		MutantStack(const MutantStack& other) : std::stack<T, C>(&other) {}
+		MutantStack(const MutantStack& other) : std::stack<T, C>(other) {}
 		MutantStack& operator=(const MutantStack& other)
 		{
 			if (this != &other)

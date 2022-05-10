@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 02:37:10 by dim               #+#    #+#             */
-/*   Updated: 2022/05/03 23:25:29 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/10 19:22:57 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,3 @@ std::ostream& operator<<(std::ostream &os, const Form& form) {
 		<< "# Execute Grade : " << form.getExecuteGrade() << std::endl;
 	return (os);
 }
-

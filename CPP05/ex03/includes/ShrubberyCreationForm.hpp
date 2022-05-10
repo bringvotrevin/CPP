@@ -6,7 +6,7 @@
 /*   By: dim <dim@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 18:09:21 by dim               #+#    #+#             */
-/*   Updated: 2022/04/29 23:09:00 by dim              ###   ########seoul.kr  */
+/*   Updated: 2022/05/10 19:49:44 by dim              ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,13 @@ public:
 	ShrubberyCreationForm(const ShrubberyCreationForm& other);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
 	~ShrubberyCreationForm();
+
+	class FileNotOpenException : public std::exception
+	{
+	public :
+		FileNotOpenException();
+		virtual const char *what() const throw();
+	};
 
 	std::string const	&getTarget() const;
 	void	execute(Bureaucrat const &executor) const;
