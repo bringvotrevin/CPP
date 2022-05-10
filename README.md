@@ -33,7 +33,12 @@ The program only accepts ADD, SEARCH, EXIT
 * EXIT
     * the program quits and the contact are lost forever!
 
-=> 예외처리가 굉장히 힘들었음 getline과 std::cin을 사용해야 할 때가 다 달라서 
+=> 인풋값을 std::getline으로 받을지 std::cin으로 받을지에 대해 많이 고민함
+[ std::cin ]
+입력값을 띄어쓰기, 엔터등으로 나누기 때문에 공백을 무시함
+* ERROR : " ADD SEARCH " 이런식으로 공백을 사이에 두고 두 문자를 입력했을 때 ADD부분만 인풋으로 들어와서 사용되고 버퍼에 SEARCH가 남아 있어서 다음 입력값을 받는 부분에서 자동으로 SEARCH값이 들어와서 실행됨
+    => 우선 값을 받아서 변수에 저장 후, cin.get()를 사용해 뒤에 남은 버퍼가 개행인지 여부를 확인함
+* ERROR : 
 
 ### ex02
 ## CPP01
