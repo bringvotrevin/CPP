@@ -33,7 +33,7 @@ The program only accepts ADD, SEARCH, EXIT
 * EXIT
     * the program quits and the contact are lost forever!
 
-=> 
+=> 예외처리가 굉장히 힘들었음 getline과 std::cin을 사용해야 할 때가 다 달라서 
 
 ### ex02
 ## CPP01
