@@ -1,7 +1,41 @@
-# CPP
+# C++
+42seoul cpp 과제 규칙
+* compile flag : -Wall -Werror -Wextra -std=c++98 => 함수나 자료형 사용시 cplusplus와 cppreference에서 버전 확인 후 사용함
+* using standard library is allowed
+* no external library
+* no \*printf. \*alloc(), free()
+* using namespace and friend is forbidden
+* STL is only allowed in CPP08
+* from CPP02 to CPP08, the classes must be designed in the Orthodox Canonical Form
+* function implementation put in a header file is not allowed
 
-## CPP0
+## CPP00
+### ex00 Megaphone
+실행시 받은 인자중 소문자를 대문자로 바꿔서 출력하는 프로그램을 만들어라
+=> toupper 함수 이용
+string을 처음으로 사용. 멤버 함수인 begin, end, size, length 등을 이용해서 쉽게 정보를 얻을 수 있다
+### ex01 My Awesome PhoneBook
+PhoneBook과 Contact 클래스를 이용해 ADD, SEARCH, EXIT 기능이 있는 전화번호부 프로그램 만들기
+implement two classes :
+* PhoneBook
+    1. it has array of contacts
+    2. it can store a maximum of 8 contacts. if you add 9th contact, replace the oldest one by the new one
+    3. dynamic allocation is forbidden
+* Contcat
+    * stands for a phonebook contact
+The program only accepts ADD, SEARCH, EXIT
+* ADD
+    * contact fields ar : first name, last name, nickname, phone number, darkest secret
+* SEARCH
+    * display the saved contacts as a list of 4 columns: index, first name, last name and nickname
+    * Each column must be 10 characters wide, separated by '|' and right-aligned. is the text is longer than the column, turncate it and last displayable character will be replaced by dot('.')
+    * then put an index number for more imformation
+* EXIT
+    * the program quits and the contact are lost forever!
 
+=> 
+
+### ex02
 ## CPP01
 ## CPP02
 ## CPP03
