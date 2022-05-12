@@ -33,12 +33,19 @@ The program only accepts ADD, SEARCH, EXIT
 * EXIT
     * the program quits and the contact are lost forever!
 
-=> 인풋값을 std::getline으로 받을지 std::cin으로 받을지에 대해 많이 고민함 </br>
+인풋값을 std::getline으로 받을지 std::cin으로 받을지에 대해 많이 고민함 </br>
+
 [ std::cin ]
 입력값을 띄어쓰기, 엔터등으로 나누기 때문에 공백을 무시함
 * ERROR : " ADD SEARCH " 이런식으로 공백을 사이에 두고 두 문자를 입력했을 때 ADD부분만 인풋으로 들어와서 사용되고 버퍼에 SEARCH가 남아 있어서 다음 입력값을 받는 부분에서 자동으로 SEARCH값이 들어와서 실행됨
     => 우선 값을 받아서 변수에 저장 후, cin.get()를 사용해 뒤에 남은 버퍼가 개행인지 여부를 확인함
-* ERROR : 
+
+[ std::getline ]
+개행을 기준으로 입력값을 받음
+contact 정보를 저장할 때 띄어쓰기가 있어도 전체 인풋 값이 잘 저장되어야 하기 때문에 getline이용
+* ERROR : 공백이 모두 저장됨
+    => 첫번째 파라미터에 std::cin >> std::ws로 앞의 공백을 모두 스킵해줌
+    
 
 ### ex02
 ## CPP01
