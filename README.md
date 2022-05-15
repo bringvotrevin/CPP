@@ -9,7 +9,7 @@
 * from CPP02 to CPP08, the classes must be designed in the Orthodox Canonical Form
 * function implementation put in a header file is not allowed
 
-## CPP00
+## <CPP00>
 ### ex00 Megaphone
 실행시 받은 인자중 소문자를 대문자로 바꿔서 출력하는 프로그램을 만들어라</br>
 => toupper 함수 이용</br>
@@ -47,7 +47,7 @@ contact 정보를 저장할 때 띄어쓰기가 있어도 전체 인풋 값이 �
 * ERROR : 공백이 모두 저장됨
     => 첫번째 파라미터에 std::cin >> std::ws로 앞의 공백을 모두 스킵해줌
 
-## CPP01
+## <CPP01>
 ### ex00 BraiiiiiiinnnzzzZ
 zombie class를 만들고 생성자와 소멸자가 호출되는 떄를 알 수 있게 알맞은 출력물을 넣는다. 그 후 정적할당으로 zombie를 생성시키는 함수 하나, new 를 사용해서 동적할당으로 zombie를 생성하는 함수를 하나 만들어서 각각 zombie들의 생성, 소멸 타이밍을 확인한다. 정적할당은 해당 함수를 벗어날 때 소멸되나 동적할당으로 생성한 좀비는 직접 delete를 해줘야 소멸이 됨</br>
 main문에서 동적할당으로 선언시 프로그램이 종료되더라도 포인터를 잃지 않기 때문에 delete를 하지 않아도 leaks가 뜨지 않으나 다른 함수에서 동적할당을 한 메모리를 해제하지 않았을 경우 함수를 벗어날 때 그 메모리를 참조할 방법이 없기 때문에 꼭 delete를 해줘야함
