@@ -84,7 +84,7 @@ replace가 금지되어 있기 때문에 find와 substr을 이용해서 매번 �
 처음으로 swtich문을 써도 된다고 허가가 떨어진 과제 </br>
 위의 ex05번과 이어서 주어진 경고레벨 이상의 경고문을 모두 출력하는 프로그램을 만드는 것
 
-## CPP02 이 과제부터 모든 클래스가 Orthodox Canonical Form(Default constructor, Copy constructor, Copy assignment operator, Destructor)을 갖추고 있어야 한다
+## [CPP02] 이 과제부터 모든 클래스가 Orthodox Canonical Form(Default constructor, Copy constructor, Copy assignment operator, Destructor)을 갖추고 있어야 한다
 ### ex00 My First Class in Orthodox Canonical Form
 Orthodox canonicla form에 맞춰서 클래스를 만들어봄
 ### ex01 Towards a more useful fixed-point numver class
@@ -94,9 +94,9 @@ Orthodox canonicla form에 맞춰서 클래스를 만들어봄
 ### ex02 Now we're talking
 
 
-## CPP03
-## CPP04
-## CPP05
+## [CPP03]
+## [CPP04]
+## [CPP05]
 ex00부터 ex03까지 bureaucrat(공무원..?이라 칭함), Form(서류)-(파생서류들: Shrubbery, Robotomy, Presidential), Intern(인턴)을 각각 class로 만들어서 사용함 
 각 과정에서 오류가 날 경우 try & catch문으로 받아줘야함 
 각 클래스 안에서 오류시 exception 클래스를 상속받는 오류 클래스들을 throw해야 하기 때문에 각각 클래스 안에 GradeTooHightException같은 클래스들을 따로 선언해줘야함
@@ -117,7 +117,7 @@ ex00부터 ex03까지 bureaucrat(공무원..?이라 칭함), Form(서류)-(파�
   인턴 만들기 
   form type 이름(shru, robo, presi 어쩌구 등등)을 인자로 받아서 makeForm을 한다
 
-## CPP06
+## [CPP06]
 ### ex00
 파라미터를 c++ 리터럴의 가장 일반적인 형태인 string 표현으로 받는 프로그램을 만들어라.
 그 리터럴은 scalar값인 char, int, float, double중 하나에 속해있어야 한다. char를 제외하고는 십진법만 사용됨
@@ -172,5 +172,5 @@ intptr_t, uintptr_t 포인터의 주소를 저장하는데 사용됨
 
 ### ex02
 
-## CPP07
-## CPP08
+## [CPP07]
+## [CPP08]
