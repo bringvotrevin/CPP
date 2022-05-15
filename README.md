@@ -11,12 +11,12 @@
 
 ## CPP00
 ### ex00 Megaphone
-실행시 받은 인자중 소문자를 대문자로 바꿔서 출력하는 프로그램을 만들어라
-=> toupper 함수 이용
-string을 처음으로 사용. 멤버 함수인 begin, end, size, length 등을 이용해서 쉽게 정보를 얻을 수 있다
+실행시 받은 인자중 소문자를 대문자로 바꿔서 출력하는 프로그램을 만들어라</br>
+=> toupper 함수 이용</br>
+string을 처음으로 사용. 멤버 함수인 begin, end, size, length 등을 이용해서 쉽게 정보를 얻을 수 있다</br>
 
 ### ex01 My Awesome PhoneBook
-PhoneBook과 Contact 클래스를 이용해 ADD, SEARCH, EXIT 기능이 있는 전화번호부 프로그램 만들기
+PhoneBook과 Contact 클래스를 이용해 ADD, SEARCH, EXIT 기능이 있는 전화번호부 프로그램 만들기</br>
 implement two classes :
 * PhoneBook
     1. it has array of contacts
@@ -37,43 +37,63 @@ The program only accepts ADD, SEARCH, EXIT
 인풋값을 std::getline으로 받을지 std::cin으로 받을지에 대해 많이 고민함 </br>
 
 [ std::cin ]
-입력값을 띄어쓰기, 엔터등으로 나누기 때문에 공백을 무시함
+입력값을 띄어쓰기, 엔터등으로 나누기 때문에 공백을 무시함</br>
 * ERROR : " ADD SEARCH " 이런식으로 공백을 사이에 두고 두 문자를 입력했을 때 ADD부분만 인풋으로 들어와서 사용되고 버퍼에 SEARCH가 남아 있어서 다음 입력값을 받는 부분에서 자동으로 SEARCH값이 들어와서 실행됨
     => 우선 값을 받아서 변수에 저장 후, cin.get()를 사용해 뒤에 남은 버퍼가 개행인지 여부를 확인함
 
 [ std::getline ]
-개행을 기준으로 입력값을 받음
-contact 정보를 저장할 때 띄어쓰기가 있어도 전체 인풋 값이 잘 저장되어야 하기 때문에 getline이용
+개행을 기준으로 입력값을 받음</br>
+contact 정보를 저장할 때 띄어쓰기가 있어도 전체 인풋 값이 잘 저장되어야 하기 때문에 getline이용</br>
 * ERROR : 공백이 모두 저장됨
     => 첫번째 파라미터에 std::cin >> std::ws로 앞의 공백을 모두 스킵해줌
 
 ## CPP01
 ### ex00 BraiiiiiiinnnzzzZ
-zombie class를 만들고 생성자와 소멸자가 호출되는 떄를 알 수 있게 알맞은 출력물을 넣는다. 그 후 정적할당으로 zombie를 생성시키는 함수 하나, new 를 사용해서 동적할당으로 zombie를 생성하는 함수를 하나 만들어서 각각 zombie들의 생성, 소멸 타이밍을 확인한다. 정적할당은 해당 함수를 벗어날 때 소멸되나 동적할당으로 생성한 좀비는 직접 delete를 해줘야 소멸이 됨
+zombie class를 만들고 생성자와 소멸자가 호출되는 떄를 알 수 있게 알맞은 출력물을 넣는다. 그 후 정적할당으로 zombie를 생성시키는 함수 하나, new 를 사용해서 동적할당으로 zombie를 생성하는 함수를 하나 만들어서 각각 zombie들의 생성, 소멸 타이밍을 확인한다. 정적할당은 해당 함수를 벗어날 때 소멸되나 동적할당으로 생성한 좀비는 직접 delete를 해줘야 소멸이 됨</br>
 main문에서 동적할당으로 선언시 프로그램이 종료되더라도 포인터를 잃지 않기 때문에 delete를 하지 않아도 leaks가 뜨지 않으나 다른 함수에서 동적할당을 한 메모리를 해제하지 않았을 경우 함수를 벗어날 때 그 메모리를 참조할 방법이 없기 때문에 꼭 delete를 해줘야함
 
 ### ex01 Moar brainz!
 zombie 배열을 만들어보기 `new name[num]` 형식으로 할당하고 `delete []name`으로 해제
 
 ### ex02 Hi this is brain
-참조자를 써보는 과제
-c++에서 call-by-reference 구현 방법에는 두 가지 방법이 있는데 첫번째는 주소값을 이용하는것, 두번째는 참조자를 이용하는것.
-참조자는 자신이 참조하는 변수를 대신할 수 있는 또 하나의 이름이다. 변수에만 선언이 가능하며 선언과 동시에 초기화되어야 한다. 또한 NULL로 초기화도 불가.
+참조자를 써보는 과제. c++에서 call-by-reference 구현 방법에는 두 가지 방법이 있는데 첫번째는 주소값을 이용하는것, 두번째는 참조자를 이용하는것.</br>
+참조자는 자신이 참조하는 변수를 대신할 수 있는 또 하나의 이름이다. 변수에만 선언이 가능하며 선언과 동시에 초기화되어야 한다. 또한 NULL로 초기화도 불가.</br>
 포인터 같은 경우 잘못 사용할 확률이 높으니 (\*, & 등 다양한 기호 사용) 상대적으로 활용법이 기존 변수와 동일한 참조자를 이용하는것이 훨씬 사용하기 편하다. 그러나 c에서는 변수를 그대로 어떤 함수로 넘길 때 그 값이 변하지 않는다고 단정지을 수 있으나 c++에서는 함수가 참조자를 이용해 매개변수를 받을지도 모르니 더 주의깊게 코드를 봐야 한다. 그렇기 때문에 함수 내에서 참조자를 통해 값을 변경하지 않을 때에는 참조자를 const로 선언해서 함수 원형을 봤을 때 값의 변경이 이뤄지지 않음을 명시해주는 습관을 기르는게 중요
 
 ### ex03 Unnecessary violence
-앞서 나온 참조자를 이용해 클래스에 활용해보는것인데 HumanA, HumanB 클래스가 있으며 각각 클래스는 내부에 Weapon이라는 클래스를 가지고 있다. 그러나 HumanA는 언제나 Weapon클래스를 가지고 있어야 하고 HumanB는 가지고 있을때도, 없을때도 있다.
+앞서 나온 참조자를 이용해 클래스에 활용해보는것인데 HumanA, HumanB 클래스가 있으며 각각 클래스는 내부에 Weapon이라는 클래스를 가지고 있다. 그러나 HumanA는 언제나 Weapon클래스를 가지고 있어야 하고 HumanB는 가지고 있을때도, 없을때도 있다.</br>
 참조자는 선언과 동시에 초기화되어야하며 NULL이 올 수 없다 그렇기 때문에 언제나 Weapon 클래스를 가지고있어야하는 HumanA는 참조자로 Weapon을 가지고 있으며 HumanB는 포인터로 가지고 있도록 만들었다.
 
 ### ex04 Sed is for losers
-Create a program that takes three parameters in the following order: a filename and two strings, s1 and s2
-It will open the file <filename> and copies its content into a new file <filename>.replacem replacing every occurrence of s1 with s2.
-(Forbidden functions : std::string::replace)
-파일 입출력을 다뤄보는 과제.
+Create a program that takes three parameters in the following order: a filename and two strings, s1 and s2</br>
+It will open the file <filename> and copies its content into a new file <filename>.replacem replacing every occurrence of s1 with s2.</br>
+(Forbidden functions : std::string::replace)</br>
+파일 입출력을 다뤄보는 과제.</br>
+`std::ifstream`으로 입력 파일, `std::ofstream`으로 출력 파일을 다룸. `is_open()`으로 정상적으로 작동했는지 확인함</br>
+c에서는 `close`함수를 이용해 닫아줘야 했으나 여기선 특별한 경우 아닌 이상 close를 굳이 쓸 필요 없음</br>
+replace가 금지되어 있기 때문에 find와 substr을 이용해서 매번 문자열을 찾고 변형할 string을 변형했으나 평가중 어떤 분께서 find의 두번째 인자로 탐색을 시작할 위치가 있다고 알려주셔서 매번 substr로 잘라서 새 string을 만들 필요 없이 탐색한 위치만 저장해두고 활용하는 방법을 알려주심 (그러나 후에 yoojlee가 시도해봤으나 약간의 문제가 있었음 이부분은 추후에 더 봐야 할듯)
 
-### ex05
-### ex06
-## CPP02
+### ex05 Harl 2.0
+함수 실행시 인자로 넘겨받은 레벨값에 따라 그에 맞는 경고문을 출력하는 과제. 레벨은 DEBUG, INFO, WARNING, ERROR 단계가 있으며 if/else if/else문의 남발이 금지되어 있다. => 함수포인터를 이용해보기</br>
+함수 포인터는 ``` Return_Type (Class_Name::* pointer_name)(Argument_List) ``` 형식이며, 
+할당 방법은 `pointer_name = function_name (or &function_name)`, 호출 방법은 `(pointer_name)(Argument_List)` 또는 `(*(pointer_name))(Argument_List)`이다.</br>
+멤버함수포인터의 경우 어떤 클래스에 속한건지 `::`연산자와를 함수포인터와 할당하는 함수명 앞에 붙여줘야 한다.</br>
+과제에서는 함수포인터 배열과 경고레벨 배열을 연관된 함수끼리 같은 인덱스로 이어지게 만든 후 인자로 받은 스트링이 몇번째 경고레벨과 같은지 찾은 후 그 인덱스의 함수를 연결해주었다.
+
+### ex06 Harl filter
+처음으로 swtich문을 써도 된다고 허가가 떨어진 과제 </br>
+위의 ex05번과 이어서 주어진 경고레벨 이상의 경고문을 모두 출력하는 프로그램을 만드는 것
+
+## CPP02 이 과제부터 모든 클래스가 Orthodox Canonical Form(Default constructor, Copy constructor, Copy assignment operator, Destructor)을 갖추고 있어야 한다
+### ex00 My First Class in Orthodox Canonical Form
+Orthodox canonicla form에 맞춰서 클래스를 만들어봄
+### ex01 Towards a more useful fixed-point numver class
+부동소수점과 고정소수점에 대해 알아보았다
+
+
+### ex02 Now we're talking
+
+
 ## CPP03
 ## CPP04
 ## CPP05
