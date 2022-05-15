@@ -53,10 +53,24 @@ zombie class를 만들고 생성자와 소멸자가 호출되는 떄를 알 수 
 main문에서 동적할당으로 선언시 프로그램이 종료되더라도 포인터를 잃지 않기 때문에 delete를 하지 않아도 leaks가 뜨지 않으나 다른 함수에서 동적할당을 한 메모리를 해제하지 않았을 경우 함수를 벗어날 때 그 메모리를 참조할 방법이 없기 때문에 꼭 delete를 해줘야함
 
 ### ex01 Moar brainz!
-zombie 배열을 만들어보기 `new Zombie[num]` 으로 선언하고 `delete []name`
-### ex02
-### ex03
-### ex04
+zombie 배열을 만들어보기 `new name[num]` 형식으로 할당하고 `delete []name`으로 해제
+
+### ex02 Hi this is brain
+참조자를 써보는 과제
+c++에서 call-by-reference 구현 방법에는 두 가지 방법이 있는데 첫번째는 주소값을 이용하는것, 두번째는 참조자를 이용하는것.
+참조자는 자신이 참조하는 변수를 대신할 수 있는 또 하나의 이름이다. 변수에만 선언이 가능하며 선언과 동시에 초기화되어야 한다. 또한 NULL로 초기화도 불가.
+포인터 같은 경우 잘못 사용할 확률이 높으니 (\*, & 등 다양한 기호 사용) 상대적으로 활용법이 기존 변수와 동일한 참조자를 이용하는것이 훨씬 사용하기 편하다. 그러나 c에서는 변수를 그대로 어떤 함수로 넘길 때 그 값이 변하지 않는다고 단정지을 수 있으나 c++에서는 함수가 참조자를 이용해 매개변수를 받을지도 모르니 더 주의깊게 코드를 봐야 한다. 그렇기 때문에 함수 내에서 참조자를 통해 값을 변경하지 않을 때에는 참조자를 const로 선언해서 함수 원형을 봤을 때 값의 변경이 이뤄지지 않음을 명시해주는 습관을 기르는게 중요
+
+### ex03 Unnecessary violence
+앞서 나온 참조자를 이용해 클래스에 활용해보는것인데 HumanA, HumanB 클래스가 있으며 각각 클래스는 내부에 Weapon이라는 클래스를 가지고 있다. 그러나 HumanA는 언제나 Weapon클래스를 가지고 있어야 하고 HumanB는 가지고 있을때도, 없을때도 있다.
+참조자는 선언과 동시에 초기화되어야하며 NULL이 올 수 없다 그렇기 때문에 언제나 Weapon 클래스를 가지고있어야하는 HumanA는 참조자로 Weapon을 가지고 있으며 HumanB는 포인터로 가지고 있도록 만들었다.
+
+### ex04 Sed is for losers
+Create a program that takes three parameters in the following order: a filename and two strings, s1 and s2
+It will open the file <filename> and copies its content into a new file <filename>.replacem replacing every occurrence of s1 with s2.
+(Forbidden functions : std::string::replace)
+파일 입출력을 다뤄보는 과제.
+
 ### ex05
 ### ex06
 ## CPP02
