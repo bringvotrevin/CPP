@@ -88,17 +88,39 @@ replace가 금지되어 있기 때문에 find와 substr을 이용해서 매번 �
 ### ex00 My First Class in Orthodox Canonical Form
 Orthodox canonicla form에 맞춰서 클래스를 만들어봄
 ### ex01 Towards a more useful fixed-point numver class
-float과 int형의 수를 받으면 8비트짜리 고정소수점 형태로 만들어보기
-부동소수점과 고정소수점에 대해 알아보았다
-[고정소수점]
-특성 숫자의 소수점 자리를 고정하는 방식. 구현하기 편하나 정밀도가 낮음
+float과 int형의 수를 받으면 8비트짜리 고정소수점 형태로 만들어보기</br>
+int는 bit shift로 구현 가능하나 float은 쉬프트 연산이 불가하기 때문에 8칸(2의 8승) 값인 256을 곱해줌</br>
+부동소수점과 고정소수점에 대해 알아보았다</br>
+[고정소수점]</br>
+특성 숫자의 소수점 자리를 고정하는 방식. 구현하기 편하나 정밀도가 낮음</br>
 [부동소수점]
 <img src="https://user-images.githubusercontent.com/81025416/168531854-ca7c1082-1e65-4604-a875-d1a63d34aeec.jpeg" width="50%" height="50%">
 
 ### ex02 Now we're talking
+위에서 구현한 Fixed 클래스에 >, <, >=, <=, ==, !=, +, -, \*, /, 전위증감, 후위증감 연산자 오버로딩과 min, max함수 구현</br>
+전위증감연산자는 값을 증가시킨 후 클래스 자체를 리턴하면 되지만 후위증감연산자는 클래스 자체의 값은 증가되나 리턴되는 값은 증가되기 전 값을 복사해둔 클래스인 tmp를 반환한다.
 
 ## [CPP03]
-## [CPP04]
+### ex00 Aaaaand... OPEN!
+공격형 게임 캐릭터를 만들고 ex00에서 만든 클래스를 베이스로 ex01과 ex02에서 상속받아서 새로운 클래스를 만들며 상속에 대해 알아보는 과제
+Name, 정수형으로 저장되는 Hit point, Energy points, Attack damage와 attack, takeDamage, beRepaired함수를 가지고 있는 ClapTrap이라는 이름의 클래스를 만들기
+
+### ex01 Serena, my love!
+ClapTrap을 private으로 상속받아서 체력과 에너지 포인트가 다르며 guardGate라는 함수가 추가된 ScavTrap이라는 클래스 만들기. 생성자와 소멸자, attack함수는 ClapTrap과 다른 출력물이 나와야 한다.</br>
+상위 클래스는 ClapTrap, 하위클래스는 ScavTrap.</br>
+하위클래스 객체가 생성될 때 하위클래스 생성자가 호출 되면서 본체가 실행되기 전에 초기화 리스트에 있는 상위 클래스의 생성자가 먼저 호출되고 동작한다. 하위클래스 생성자 호출->상위클래스 생성자 호출->상위클래스 변수 초기화->하위클래스 클래스 변수 초기화 순.</br> 그러나 파괴될때는 역순이다. 자식(하위클래스)이 파괴되는 동안에도 부모(상위클래스)의 멤버를 참조할 수 있어야 하기 때문에 자식 클래스가 파괴된 후 부모클래스가 파괴된다.
+상속될 때 재정의 해야하는 함수는 생성자와 파괴자, 대입연산자, 정적 멤버변수와 정적 멤버함수가 있으며 추가로 상속받지 않고 다른 동작을 하기 원하는 함수는 오버라이딩을 해주어야 한다.
+
+### ex02 Repetitive work
+ex01번과 비슷하다. ClapTrap을 상속받는 FragTrap 만들기
+
+## [CPP04] 
+### ex00 Polymorphism
+Animal 
+
+### ex01 I don't want to set the world on fire
+### ex02 Abstract class
+
 ## [CPP05]
 ex00부터 ex03까지 bureaucrat(공무원..?이라 칭함), Form(서류)-(파생서류들: Shrubbery, Robotomy, Presidential), Intern(인턴)을 각각 class로 만들어서 사용함 
 각 과정에서 오류가 날 경우 try & catch문으로 받아줘야함 
