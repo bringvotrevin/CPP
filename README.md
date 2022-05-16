@@ -93,8 +93,7 @@ float과 int형의 수를 받으면 8비트짜리 고정소수점 형태로 만�
 [고정소수점]
 특성 숫자의 소수점 자리를 고정하는 방식. 구현하기 편하나 정밀도가 낮음
 [부동소수점]
-![floating point](https://www.notion.so/CPP02-78bd9bdc33ba4518b3be10f37c027e4c#829987a700894fc4857be47420c22929)
-![437F4FE1-D6CA-43B4-A02E-DDE07E260F3C](https://user-images.githubusercontent.com/81025416/168531854-ca7c1082-1e65-4604-a875-d1a63d34aeec.jpeg)
+![437F4FE1-D6CA-43B4-A02E-DDE07E260F3C](https://user-images.githubusercontent.com/81025416/168531854-ca7c1082-1e65-4604-a875-d1a63d34aeec.jpeg){: width="30%" height="30%"}
 
 ### ex02 Now we're talking
 
