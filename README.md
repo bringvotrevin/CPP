@@ -88,11 +88,14 @@ replace가 금지되어 있기 때문에 find와 substr을 이용해서 매번 �
 ### ex00 My First Class in Orthodox Canonical Form
 Orthodox canonicla form에 맞춰서 클래스를 만들어봄
 ### ex01 Towards a more useful fixed-point numver class
+float과 int형의 수를 받으면 8비트짜리 고정소수점 형태로 만들어보기
 부동소수점과 고정소수점에 대해 알아보았다
-
+[고정소수점]
+특성 숫자의 소수점 자리를 고정하는 방식. 구현하기 편하나 정밀도가 낮음
+[부동소수점]
+![floating point](https://files.slack.com/files-pri/T039P7U66-F03FLR1103W/___________________________________________________________.jpg)
 
 ### ex02 Now we're talking
-
 
 ## [CPP03]
 ## [CPP04]
