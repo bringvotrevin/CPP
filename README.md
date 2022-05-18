@@ -116,7 +116,12 @@ ex01번과 비슷하다. ClapTrap을 상속받는 FragTrap 만들기
 
 ## [CPP04] 
 ### ex00 Polymorphism
-Animal 
+Animal 클래스를 만들고 그것을 상속받아 Dog과 Cat 클래스도 만든다.</br>
+makeSound 함수를 오버라이딩해서 각각의 동물들 울음소리를 출력하도록 만들고 Animal의 makeSound은 아무 소리도 내지 말아야한다.</br>
+메인문에서 Animal 포인터를 생성 후 new로 각각 Animal, Dog, Cat 클래스를 할당해 준 후 각각 포인터들의 makeSound를 해서 포인터 클래스가 아닌 실제로 생성된 클래스의 makeSound 함수가 알맞게 실행되어야 한다. 이는 makeSound가 가상함수(virtual function)으로 정의되어야 한다는 것이다. WrongAnimal과 WrongCat의 경우 동일하게 실행하나 실행시 WrongCat의 makeSound가 아닌 WrongAnimal의 함수가 실행되어서 Animal, Cat 클래스와 </br>
+
+[virtual function]
+대부분의 함수를 호출하는 코드는 컴파일 타임에 고정된 메모리 주소로 변환되는데 이것을 정적 바인딩이라고 한다 C++ 에서 가상함수는 프로그램이 실행될 때 객체를 결정하기 때문에 컴파일 타임에 해당 객체를 특절할 수 없기 때문에 런타임에 올바른 함수가 실행될 수 있도록 하는 동적 바인딩을 한다. C++ 컴파일러는 각각의 개체마다 가상함수 테이블을 가리키는 포인터를 저장하기 위한 숨겨진 멤버를 하나씩 추가하며 가상함수를 하나라도 가지는 클래스에서는 컴파일러가 가상함수 테이블을 만들어서 주소를 저장한다. 가상함수가 있는 클래스는 소멸자도 반드시 가상으로 선언해야한다
 
 ### ex01 I don't want to set the world on fire
 ### ex02 Abstract class
