@@ -84,7 +84,7 @@ replace가 금지되어 있기 때문에 find와 substr을 이용해서 매번 �
 처음으로 swtich문을 써도 된다고 허가가 떨어진 과제 </br>
 위의 ex05번과 이어서 주어진 경고레벨 이상의 경고문을 모두 출력하는 프로그램을 만드는 것
 
-## [CPP02] 이 과제부터 모든 클래스가 Orthodox Canonical Form(Default constructor, Copy constructor, Copy assignment operator, Destructor)을 갖추고 있어야 한다
+## [CPP02] </br>이 과제부터 모든 클래스가 Orthodox Canonical Form(Default constructor, Copy constructor, Copy assignment operator, Destructor)을 갖추고 있어야 한다
 ### ex00 My First Class in Orthodox Canonical Form
 Orthodox canonicla form에 맞춰서 클래스를 만들어봄
 ### ex01 Towards a more useful fixed-point numver class
@@ -94,6 +94,7 @@ int는 bit shift로 구현 가능하나 float은 쉬프트 연산이 불가하�
 [고정소수점]</br>
 특성 숫자의 소수점 자리를 고정하는 방식. 구현하기 편하나 정밀도가 낮음</br>
 [부동소수점]
+
 <img src="https://user-images.githubusercontent.com/81025416/168531854-ca7c1082-1e65-4604-a875-d1a63d34aeec.jpeg" width="50%" height="50%">
 
 ### ex02 Now we're talking
