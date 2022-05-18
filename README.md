@@ -209,4 +209,12 @@ intptr_t, uintptr_t 포인터의 주소를 저장하는데 사용됨. 시스템 
 dynamic_cast를 이용해보는 과제. 안전한 다운캐스팅용. 부모 클래스의 포인터에서 자식 클래스의 포인터로 다운캐스팅해주는 연산자. 실제로 부모클래스 포인터가 무엇을 가리키고있는지를 보고 같은 타입으로 다운캐스팅 할 경우에만 변환이 성공적으로 이루어짐. 성공시 new_type의 value를 리턴한다. 포인터로의 변환 실패시 NULL을 리턴하며 참조자로의 변환이 실패할 경우 exception을 throw한다(참조자에는 NULL이 들어갈 수 없기 때문에).
 
 ## [CPP07]
+### ex00 Start with a few functions
+템플릿을 써본다. 
+### ex01 Iter
+### ex02 Array
+
 ## [CPP08]
+### ex00 Easy find
+### ex01 Span
+### ex02 Mutated abomination
