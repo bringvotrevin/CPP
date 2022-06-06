@@ -9,5 +9,5 @@
 * from CPP02 to CPP08, the classes must be designed in the Orthodox Canonical Form
 * function implementation put in a header file is not allowed
 
-## CPP00~CPP08까지 subject과 설명들은 wiki 참조
+### [CPP00-CPP08] 설명과 풀이
 [CPP Wiki](https://github.com/dimfrom42/CPP/wiki)
