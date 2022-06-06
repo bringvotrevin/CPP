@@ -10,6 +10,7 @@
 * function implementation put in a header file is not allowed
 
 ## CPP00~CPP08까지 subject과 설명들은 wiki 참조
+[CPP Wiki](https://github.com/dimfrom42/CPP/wiki)
 
 ## [CPP00]
 ### ex00 Megaphone
