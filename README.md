@@ -9,6 +9,8 @@
 * from CPP02 to CPP08, the classes must be designed in the Orthodox Canonical Form
 * function implementation put in a header file is not allowed
 
+## CPP00~CPP08까지 subject과 설명들은 wiki 참조
+
 ## [CPP00]
 ### ex00 Megaphone
 실행시 받은 인자중 소문자를 대문자로 바꿔서 출력하는 프로그램을 만들어라</br>
